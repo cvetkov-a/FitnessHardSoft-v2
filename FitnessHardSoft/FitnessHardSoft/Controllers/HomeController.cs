@@ -15,7 +15,7 @@ namespace FitnessHardSoft.Controllers
         // GET POSTS
         public ActionResult Index()
         {
-            var posts = db.Posts.Include(p => p.Author).OrderByDescending(p => p.Date).Take(3);
+            var posts = db.Posts.Include(p => p.Author).OrderByDescending(p => p.Date).Take(6);
             return View(posts.ToList());
         }
 
