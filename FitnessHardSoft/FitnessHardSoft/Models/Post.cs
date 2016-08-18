@@ -22,5 +22,7 @@ namespace FitnessHardSoft.Models
         public DateTime Date { get; set; }
 
         public ApplicationUser Author { get; set; }
+
+        public string PicLink { get; set; }
     }
 }
