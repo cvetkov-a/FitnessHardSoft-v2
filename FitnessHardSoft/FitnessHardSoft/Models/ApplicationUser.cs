@@ -16,6 +16,17 @@ namespace FitnessHardSoft.Models
         [StringLength(50)]
         public string LastName { get; set; }
 
+        public string About { get; set; }
+
+        public bool IsTrainer { get; set; }
+
+        public bool HasCard { get; set; }
+
+        public bool IsAdmin { get; set; }
+
+        [StringLength(250)]
+        public string PictureLink { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
