@@ -9,6 +9,10 @@ namespace FitnessHardSoft.Models
 {
     public class Post
     {
+        public Post()
+        {
+            this.Date = DateTime.Now;
+        }
         [Key]
         public int Id { get; set; }
 

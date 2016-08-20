@@ -12,6 +12,7 @@ namespace FitnessHardSoft.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+        public string PictureLink { get; set; }
     }
 
     public class ManageLoginsViewModel
@@ -82,5 +83,11 @@ namespace FitnessHardSoft.Models
     {
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
+    }
+    public class ChangePictureViewModel
+    {
+        [Required]
+        [Display(Name = "New Picture Link")]
+        public string NewPictureLink { get; set; }
     }
 }

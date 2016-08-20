@@ -85,6 +85,9 @@ namespace FitnessHardSoft.Models
 
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+
+        [Display(Name = "Picture Link")]
+        public string PictureLink { get; set; }
     }
 
     public class ResetPasswordViewModel
