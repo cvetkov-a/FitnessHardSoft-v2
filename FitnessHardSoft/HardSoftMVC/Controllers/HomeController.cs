@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using HardSoftMVC.Models;
+using System.Text.RegularExpressions;
 
 namespace HardSoftMVC.Controllers
 {
@@ -42,6 +43,8 @@ namespace HardSoftMVC.Controllers
 
                         post.Content += "...";
                     }
+
+                    post.Content = Regex.Replace(post.Content, @"<[^>]*>", String.Empty);
                 }
             }
 

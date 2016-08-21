@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HardSoftMVC.Models;
+using PagedList;
 
 namespace HardSoftMVC.Controllers
 {
@@ -15,9 +16,50 @@ namespace HardSoftMVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
-        public ActionResult Index()
+        public ActionResult Index(string currentFilter, string searchString, int? page)
         {
-            return View(db.Posts.ToList());
+            var posts = db.Posts.Include(p => p.Author);
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                posts = posts.Where(s => s.Title.Contains(searchString)
+                                       || s.Content.Contains(searchString));
+            }
+
+            foreach (var post in posts)
+            {
+                if (post.Title.Length >= 40)
+                {
+                    post.Title = post.Title.Substring(0, 40);
+
+                    post.Title += "...";
+                }
+
+                if (post.Content.Length >= 300)
+                {
+                    post.Content = post.Content.Substring(0, 300);
+
+                    post.Content += "...";
+                }
+            }
+
+            posts = posts.OrderByDescending(p => p.Date);
+
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+
+            return View(posts.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Posts/Details/5
@@ -46,7 +88,7 @@ namespace HardSoftMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,Date")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,Date,Author_Id")] Post post)
         {
             if (ModelState.IsValid)
             {
