@@ -80,3 +80,7 @@ c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin
 c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\obj\Debug\HardSoftMVC.dll
 c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\obj\Debug\HardSoftMVC.pdb
+C:\Users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\PagedList.dll
+C:\Users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\PagedList.Mvc.dll
+C:\Users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\PagedList.xml
+C:\Users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\PagedList.Mvc.xml

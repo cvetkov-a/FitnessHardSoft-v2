@@ -1,51 +1,190 @@
-﻿@model IEnumerable<HardSoftMVC.Models.Post>
+﻿@model PagedList.IPagedList<HardSoftMVC.Models.Post>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>Index</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th></th>
-    </tr>
+    <title>Document</title>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageURL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/blog.css")
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <aside class="sideBar">
+        <header>
+            <span class="glyphicon glyphicon-remove navbartogg"></span>
+        </header>
+        <main>
+            <div class="time">
+                <div>Any Questions?</div>
+                <div>Call Us: <span><a href="tel:202-555-0130">202-555-0130</a></span></div>
+            </div>
+        </main>
+        <nav>
+            <ul>
+                <li><a href="@Url.Action("Index", "Home")#home">Home</a></li>
+                <li><a href="@Url.Action("Index", "Home")#trainers">Trainers</a></li>
+                <li><a href="@Url.Action("Index", "Home")#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <section class="s-l animated wow fadeIn" id="home">
+        <main>
+            <div class="navBar">
+                <div class="container">
+                    <section class="logo">
+                        <a href="">HardSoft</a>
+                    </section>
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="@Url.Action("Index", "Home")#home">Home</a></li>
+                            <li><a href="@Url.Action("Index", "Home")#trainers">Trainers</a></li>
+                            <li><a href="@Url.Action("Index", "Home")#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <button class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+            <section class="section blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="new">
+                                        @if (Model.Count > 0)
+                                        {
+                                            foreach (var item in Model)
+                                            {
+                                                <div class="panel">
+                                                    <div class="panel-heading">
+                                                        <div class="titlenew">
+                                                            <h3><a href="@Url.Action("Details", "Posts", new { id = item.Id })">@item.Title</a></h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="head">
+                                                            <a href="@Url.Action("Details", "Posts", new { id = item.Id })"><img src="@item.ImageURL" class="img-responsive" alt=""></a>
+                                                        </div>
+                                                        <div class="content">
+                                                            @Html.Raw(item.Content)
+                                                            <hr>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-footer">
+                                                        <div class="meta">
+                                                            <div>
+                                                                <i class="fa fa-user"></i>
+                                                                <span>BY:</span>
+                                                                @if (item.Author != null)
+                                                                {
+                                                                    <a href="">@item.Author.FullName</a>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span>Anonymous</span>
+                                                                }
+                                                            </div>
+                                                            <div>
+                                                                <i class="fa fa-calendar"></i>
+                                                                <span>@item.Date.ToString("MMMM dd, yyyy")</span>
+                                                            </div>
+                                                            <div>
+                                                                <i class="fa fa-folder-open-o"></i>
+                                                                <span>IN:</span>
+                                                                <a href="">Wordpress</a>
+                                                                <span>, </span>
+                                                                <a href="">PHP</a>
+                                                            </div>
+                                                            <div class="read">
+                                                                <a href="@Url.Action("Details", "Posts", new { id = item.Id })">Read More</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        } else
+                                        {
+                                            <div class="panel">
+                                                <div class="panel-heading">No Results</div>
+                                            </div>
+                                        }
 
-</table>
+                                        @Html.PagedListPager(Model, page => Url.Action("Index",
+                                        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 sidebar">
+                            <div class="search">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <i class="fa fa-search"></i>
+                                        <span>Search</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        @using (Html.BeginForm("Index", "Posts", FormMethod.Get))
+                                        {
+                                            <div class="form-group">
+                                                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control", @placeholder = "Search Here" })
+                                            </div>
+                                                <button type="submit" class="btn btn-default">Search now</button>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <i class="fa fa-folder-open-o"></i>
+                                        <span>Tags</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <a href="">PHP</a>
+                                        <a href="">Wordpress</a>
+                                        <a href="">HTML</a>
+                                        <a href="">CSS</a>
+                                        <a href="">JavaScript</a>
+                                        <a href="">Web</a>
+                                        <a href="">Designer</a>
+                                        <a href="">Java</a>
+                                        <a href="">C#</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <span>&copy; copyright 2016 - Fitness Centre HardSoft</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/blog")
+</body>
+</html>
