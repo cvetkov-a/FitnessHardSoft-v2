@@ -24,17 +24,24 @@
         <header>
             <span class="glyphicon glyphicon-remove navbartogg"></span>
         </header>
-        <main>
+        <aside class="main">
             <div class="time">
                 <div>Any Questions?</div>
                 <div>Call Us: <span><a href="tel:202-555-0130">202-555-0130</a></span></div>
             </div>
-        </main>
+        </aside>
         <nav>
             <ul>
                 <li><a href="@Url.Action("Index", "Home")#home">Home</a></li>
                 <li><a href="@Url.Action("Index", "Home")#trainers">Trainers</a></li>
                 <li><a href="@Url.Action("Index", "Home")#contact">Contact</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (ViewBag.isAdmin == true || ViewBag.isTrainer == true)
+                    {
+                        <li><a href="@Url.Action("Create", "Posts")">Create</a></li>
+                    }
+                }
             </ul>
         </nav>
     </aside>
@@ -50,6 +57,13 @@
                             <li><a href="@Url.Action("Index", "Home")#home">Home</a></li>
                             <li><a href="@Url.Action("Index", "Home")#trainers">Trainers</a></li>
                             <li><a href="@Url.Action("Index", "Home")#contact">Contact</a></li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (ViewBag.isAdmin == true || ViewBag.isTrainer == true)
+                                {
+                                    <li><a href="@Url.Action("Create", "Posts")">Create</a></li>
+                                }
+                            }
                         </ul>
                     </nav>
                     <button class="navbar-toggle">
@@ -113,6 +127,22 @@
                                                             <div class="read">
                                                                 <a href="@Url.Action("Details", "Posts", new { id = item.Id })">Read More</a>
                                                             </div>
+                                                            @if (User.Identity.IsAuthenticated)
+                                                            {
+                                                                if (ViewBag.isAdmin == true || ViewBag.isTrainer == true)
+                                                                {
+                                                                    <div class="read">
+                                                                        <a href="@Url.Action("Edit", "Posts", new { id = item.Id })">Edit</a>
+                                                                    </div>
+                                                                }
+
+                                                                if (ViewBag.isAdmin == true)
+                                                                {
+                                                                    <div class="read">
+                                                                        <a href="@Url.Action("Delete", "Posts", new { id = item.Id })">Remove</a>
+                                                                    </div>
+                                                                }
+                                                            }
                                                         </div>
                                                     </div>
                                                 </div>

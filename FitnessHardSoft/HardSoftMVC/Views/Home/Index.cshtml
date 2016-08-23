@@ -69,24 +69,6 @@
                         <ul>
                             <li><a href="#home">Home</a></li>
                             <li><a href="#trainers">Trainers</a></li>
-                            @using Microsoft.AspNet.Identity
-                            @if (Request.IsAuthenticated)
-                            {
-                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
-                                {
-                                    @Html.AntiForgeryToken()
-                                    if (Request.IsAuthenticated)
-                                    {
-                                <li>
-                                    <a href="" data-toggle="dropdown">User</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="@Url.Action("Index", "Manage")">Manage</a></li>
-                                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                                    </ul>
-                                </li>
-                                    }
-                                }
-                            }
                             <li><a href="#blog">Blog</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
@@ -145,13 +127,6 @@
                                                     <a href="@Url.Action("Details", "Posts", new { id = item.Id })">@item.Title</a>
                                                 </h5>
                                                 <p>@item.Content</p>
-                                                @if (item.Author != null)
-                                                {
-                                                    <p class="postedBy">
-                                                        by
-                                                        <a href="">@item.Author.FullName (@item.Author.UserName)</a>
-                                                    </p>
-                                                }
                                             </div>
                                         </div>
                                     </div>
