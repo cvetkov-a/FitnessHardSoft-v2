@@ -126,6 +126,7 @@ hr {
     text-transform: uppercase;
     background-color: #e74c3c;
     float: right;
+    margin-left: 5px;
 }
 
 .meta a {

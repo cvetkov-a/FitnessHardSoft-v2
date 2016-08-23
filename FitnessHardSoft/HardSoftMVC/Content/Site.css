@@ -30,7 +30,6 @@ body.body {
 }
 
 .pace {
-  -webkit-pointer-events: none;
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -115,7 +114,7 @@ body.body {
    cursor: pointer;
 }
 
-.sideBar main {
+.sideBar aside {
    text-align: center;
    margin: 50px auto;
 }
@@ -333,7 +332,6 @@ header .barSocial {
    border-radius: 0;
    background-color: #141618;
    color: #eeeeee;
-   ;
    box-shadow: none;
    border: none;
    padding: 0;

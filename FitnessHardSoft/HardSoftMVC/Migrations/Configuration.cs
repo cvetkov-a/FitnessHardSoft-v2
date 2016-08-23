@@ -27,7 +27,13 @@ namespace HardSoftMVC.Migrations
                 CreateUser(context, "geshu@gmail.com", "12345", "Geshu");
 
                 CreateRole(context, "Administrators");
+                CreateRole(context, "Trainers");
+
+
                 AddUserToRole(context, "ib0x@abv.bg", "Administrators");
+                AddUserToRole(context, "pesho@gmail.com", "Trainers");
+                AddUserToRole(context, "merry@gmail.com", "Trainers");
+                AddUserToRole(context, "geshu@gmail.com", "Trainers");
 
                 CreateTrainer(context,
                     name: "John Doe",

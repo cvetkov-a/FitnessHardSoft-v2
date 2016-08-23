@@ -6,8 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using HardSoftMVC.Models;
 using PagedList;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
 
 namespace HardSoftMVC.Controllers
 {
@@ -59,7 +62,45 @@ namespace HardSoftMVC.Controllers
             int pageSize = 3;
             int pageNumber = (page ?? 1);
 
+            if (isAdministrator())
+                ViewBag.isAdmin = true;
+
+            if (isTrainer())
+                ViewBag.isTrainer = true;
+
             return View(posts.ToPagedList(pageNumber, pageSize));
+        }
+
+        public Boolean isAdministrator()
+        {
+            var userStore = new UserStore<ApplicationUser>(db);
+            var userManager = new UserManager<ApplicationUser>(userStore);
+
+            if (!User.Identity.IsAuthenticated)
+                return false;
+
+            var user = User.Identity;
+
+            if (!userManager.IsInRole(user.GetUserId(), "Administrators"))
+                return false;
+
+            return true;
+        }
+
+        public Boolean isTrainer()
+        {
+            var userStore = new UserStore<ApplicationUser>(db);
+            var userManager = new UserManager<ApplicationUser>(userStore);
+
+            if (!User.Identity.IsAuthenticated)
+                return false;
+
+            var user = User.Identity;
+
+            if (!userManager.IsInRole(user.GetUserId(), "Trainers"))
+                return false;
+
+            return true;
         }
 
         // GET: Posts/Details/5
@@ -78,8 +119,17 @@ namespace HardSoftMVC.Controllers
         }
 
         // GET: Posts/Create
+        [Authorize(Roles = "Administrators, Trainers")]
         public ActionResult Create()
         {
+            ViewBag.authors = db.Users.ToList();
+
+            ViewBag.IdentityAuthorName = User.Identity.GetUserName();
+            ViewBag.IdentityAuthorId = User.Identity.GetUserId();
+
+            if (isAdministrator())
+                ViewBag.isAdmin = true;
+
             return View();
         }
 
@@ -88,6 +138,7 @@ namespace HardSoftMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrators, Trainers")]
         public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,Date,Author_Id")] Post post)
         {
             if (ModelState.IsValid)
@@ -132,6 +183,7 @@ namespace HardSoftMVC.Controllers
         }
 
         // GET: Posts/Delete/5
+        [Authorize(Roles = "Administrators")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -149,6 +201,7 @@ namespace HardSoftMVC.Controllers
         // POST: Posts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrators")]
         public ActionResult DeleteConfirmed(int id)
         {
             Post post = db.Posts.Find(id);
