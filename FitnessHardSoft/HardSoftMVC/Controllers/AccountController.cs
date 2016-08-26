@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HardSoftMVC.Models;
+using System.IO;
 
 namespace HardSoftMVC.Controllers
 {
@@ -91,6 +92,25 @@ namespace HardSoftMVC.Controllers
             }
         }
 
+        public string UploadPhoto(HttpPostedFileBase Avatar)
+        {
+            if (Avatar != null)
+            {
+                var fileName = Path.GetFileName(Avatar.FileName);
+                var rondom = Guid.NewGuid() + fileName;
+                var path = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/Images/UserPhotos"), rondom);
+                var filePathToSave = "UserPhotos/" + fileName;
+                if (!Directory.Exists(System.Web.HttpContext.Current.Server.MapPath("~/Content/Images/UserPhotos")))
+                {
+                    Directory.CreateDirectory(System.Web.HttpContext.Current.Server.MapPath("~/Content/Images/UserPhotos"));
+                }
+                Avatar.SaveAs(path);
+
+                return rondom;
+            }
+            return "nofile.png";
+        }
+
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]
@@ -147,11 +167,12 @@ namespace HardSoftMVC.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model, HttpPostedFileBase Avatar)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var fileName = UploadPhoto(Avatar);
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Avatar = fileName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
