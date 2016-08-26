@@ -20,6 +20,10 @@
             <li><a href="">Pages</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a href="#"><img src="~/Content/Images/UserPhotos/@User.Identity.GetAvatar()" alt="Alternate Text" /></a></li>
+            }
         </ul>
     </nav>
 </aside>
