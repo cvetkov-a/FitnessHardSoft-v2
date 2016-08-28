@@ -12,15 +12,15 @@ namespace HardSoftMVC.Models
     {
         [StringLength(100)]
         public string FullName { get; set; }
-        public string Avatar { get; set; }
-        public string GetAvatar { get; private set; }
+        public string Avatar { get; internal set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            userIdentity.AddClaim(new Claim("GetAvatar", this.GetAvatar.ToString()));
             // Add custom user claims here
+            userIdentity.AddClaim(new Claim("Avatar", this.Avatar));
+
             return userIdentity;
         }
     }

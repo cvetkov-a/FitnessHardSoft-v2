@@ -9,6 +9,5 @@ namespace HardSoftMVC.Models
     {
         public List<Trainer> Trainers { get; set; }
         public List<Post> Posts { get; set; }
-        public List<ApplicationUser> User { get; set; }
     }
 }
