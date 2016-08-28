@@ -3,6 +3,7 @@
 }
 
 @model IEnumerable<HardSoftMVC.Models.CookMeIndexViewModel>
+@using HardSoftMVC.Models.Extensions
 <aside class="sideBar">
     <header>
         <span class="glyphicon glyphicon-remove navbartogg"></span>
@@ -22,7 +23,7 @@
             <li><a href="#contact">Contact</a></li>
             @if (User.Identity.IsAuthenticated)
             {
-                <li><a href="#"><img src="~/Content/Images/UserPhotos/@User.Identity.GetAvatar()" alt="Alternate Text" /></a></li>
+                <li><a href="#"><img class="img-responsive avatar" src="~/Content/Images/UserPhotos/@User.Identity.getAvatar()" alt="User Avatar" /></a></li>
             }
         </ul>
     </nav>
@@ -75,6 +76,10 @@
                             <li><a href="#trainers">Trainers</a></li>
                             <li><a href="#blog">Blog</a></li>
                             <li><a href="#contact">Contact</a></li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a href="#" class="user-avatar"><img class="img-responsive avatar" src="~/Content/Images/UserPhotos/@User.Identity.getAvatar()" alt="User Avatar" /></a></li>
+                            }
                         </ul>
                     </nav>
                     <button class="navbar-toggle">

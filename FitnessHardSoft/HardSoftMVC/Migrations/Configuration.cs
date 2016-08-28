@@ -21,10 +21,10 @@ namespace HardSoftMVC.Migrations
             {
                 // If the database is empty, populate sample data in it
 
-                CreateUser(context, "ib0x@abv.bg", "123456789", "System Administrator");
-                CreateUser(context, "pesho@gmail.com", "12345", "Pesho");
-                CreateUser(context, "merry@gmail.com", "12345", "Merry");
-                CreateUser(context, "geshu@gmail.com", "12345", "Geshu");
+                CreateUser(context, "ib0x@abv.bg", "123456789", "System Administrator", "noavatar.jpg");
+                CreateUser(context, "pesho@gmail.com", "12345", "Pesho", "noavatar.jpg");
+                CreateUser(context, "merry@gmail.com", "12345", "Merry", "noavatar.jpg");
+                CreateUser(context, "geshu@gmail.com", "12345", "Geshu", "noavatar.jpg");
 
                 CreateRole(context, "Administrators");
                 CreateRole(context, "Trainers");
@@ -141,7 +141,7 @@ namespace HardSoftMVC.Migrations
         }
 
         private void CreateUser(ApplicationDbContext context,
-            string email, string password, string fullName)
+            string email, string password, string fullName, string avatar)
         {
             var userManager = new UserManager<ApplicationUser>(
                 new UserStore<ApplicationUser>(context));
@@ -158,7 +158,8 @@ namespace HardSoftMVC.Migrations
             {
                 UserName = email,
                 Email = email,
-                FullName = fullName
+                FullName = fullName,
+                Avatar = avatar
             };
 
             var userCreateResult = userManager.Create(user, password);

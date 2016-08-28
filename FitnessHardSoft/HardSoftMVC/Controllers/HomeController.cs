@@ -18,13 +18,11 @@ namespace HardSoftMVC.Controllers
         {
             var trainers = db.Trainers.OrderByDescending(t => t.Date).Take(4).ToList();
             var posts = db.Posts.Include(p => p.Author).OrderByDescending(p => p.Date).Take(6).ToList();
-            var user = db.Users.Where(u => u.Id == User.Identity.GetUserId()).ToList();
 
             var viewModel = new CookMeIndexViewModel
             {
                 Trainers = trainers,
                 Posts = posts,
-                User = user
             };
 
             List<CookMeIndexViewModel> viewModelList = new List<CookMeIndexViewModel>();

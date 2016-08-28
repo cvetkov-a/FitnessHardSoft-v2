@@ -108,7 +108,7 @@ namespace HardSoftMVC.Controllers
 
                 return rondom;
             }
-            return "nofile.png";
+            return "noavatar.jpg";
         }
 
         //
