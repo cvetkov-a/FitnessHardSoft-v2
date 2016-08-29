@@ -1,8 +1,16 @@
-﻿@model HardSoftMVC.Models.IndexViewModel
-@{
-    ViewBag.Title = "Manage";
+﻿@{
+    Layout = null;
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/login")
+    @Scripts.Render("~/bundles/modernizr")
 
+<<<<<<< HEAD
 @using HardSoftMVC.Models.Extensions
 <aside class="sideBar">
     <header>
@@ -213,3 +221,40 @@
         </div>
     </div>
 </footer>
+=======
+</head>
+@model HardSoftMVC.Models.IndexViewModel
+
+<body>
+    <section class="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="panel login">
+                                <div class="panel-heading">
+                                    Manage your account
+                                </div>
+                                <div class="panel-body">
+                                     <div class="input-group">
+                                            @if (Model.HasPassword)
+                                            {
+                                                @Html.ActionLink("Change your password", "ChangePassword")
+                                            }
+                                            else
+                                            {
+                                                @Html.ActionLink("Create", "SetPassword")
+                                            }
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+>>>>>>> master
