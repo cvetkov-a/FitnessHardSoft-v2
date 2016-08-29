@@ -21,5 +21,7 @@ namespace HardSoftMVC.Models
         public System.Data.Entity.DbSet<HardSoftMVC.Models.Post> Posts { get; set; }
 
         public System.Data.Entity.DbSet<HardSoftMVC.Models.Trainer> Trainers { get; set; }
+
+        public System.Data.Entity.DbSet<HardSoftMVC.Models.Contact> Contacts { get; set; }
     }
 }

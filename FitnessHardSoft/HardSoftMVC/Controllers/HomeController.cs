@@ -18,11 +18,13 @@ namespace HardSoftMVC.Controllers
         {
             var trainers = db.Trainers.OrderByDescending(t => t.Date).Take(4).ToList();
             var posts = db.Posts.Include(p => p.Author).OrderByDescending(p => p.Date).Take(6).ToList();
+            var contact = new Contact();
 
             var viewModel = new CookMeIndexViewModel
             {
                 Trainers = trainers,
                 Posts = posts,
+                Contact = contact
             };
 
             List<CookMeIndexViewModel> viewModelList = new List<CookMeIndexViewModel>();
@@ -50,6 +52,20 @@ namespace HardSoftMVC.Controllers
             }
 
             return View(viewModelList);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Name,Email,Subject,Message,Date")] Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Contacts.Add(contact);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(contact);
         }
     }
 }

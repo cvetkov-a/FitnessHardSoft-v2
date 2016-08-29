@@ -182,22 +182,31 @@
         <section id="contact" class="section">
             <div class="container">
                 <div class="row cn">
-                    <form method="post">
+                    @using (Html.BeginForm("Create", "Home"))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <input type="hidden" name="Date" value=" @DateTime.Now.ToShortDateString()" />
+
                         <div class="col-md-6">
                             <div class="form-group wow rollIn" data-wow-delay="0.1s">
-                                <input type="text" name="name" class="form-control" placeholder="Name">
+                                <input class="form-control text-box single-line" data-val="true" data-val-length="The field Name must be a string with a maximum length of 200." data-val-length-max="200" placeholder="Name" data-val-required="The Name field is required." name="Name" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group wow rollIn" data-wow-delay="0.1s">
-                                <input type="email" name="email" class="form-control" placeholder="Email">
+                                <input class="form-control text-box single-line" data-val="true" data-val-length="The field Email must be a string with a maximum length of 200." data-val-length-max="200" data-val-required="The Email field is required." name="Email" placeholder="Email" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
                             </div>
                         </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group wow rollIn" data-wow-delay="0.7s">
-                                        <input type="text" name="subject" class="form-control" placeholder="Subject">
+                                        <input class="form-control text-box single-line" data-val="true" data-val-required="The Subject field is required." name="Subject" type="text" placeholder="Subject" value="" />
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Subject" data-valmsg-replace="true"></span>
                                     </div>
                                 </div>
                             </div>
@@ -206,7 +215,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group wow rollIn" data-wow-delay="1s">
-                                        <textarea name="question" id="" cols="30" class="form-control" placeholder="Message" rows="10"></textarea>
+                                        <textarea class="form-control text-box single-line" rows="10" cols="30" placeholder="Message" data-val="true" data-val-required="The Message field is required." name="Message" type="text" value=""></textarea>
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Message" data-valmsg-replace="true"></span>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +224,7 @@
                         <div class="container">
                             <input type="submit" class="btn wow bounceIn" value="Send" data-wow-delay="2s">
                         </div>
-                    </form>
+                    }
                 </div>
             </div>
         </section>
