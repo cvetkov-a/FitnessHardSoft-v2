@@ -671,6 +671,14 @@ footer span {
     vertical-align: middle;
 }
 
+#logoutForm {
+    padding: 10px 0px 13px;
+}
+
+#logoutForm a {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 993px) {
    .nav {
       display: none;
