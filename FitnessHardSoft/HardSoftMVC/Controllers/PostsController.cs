@@ -19,8 +19,9 @@ namespace HardSoftMVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
-        public ActionResult Index(string currentFilter, string searchString, int? page)
+        public ActionResult Index(string currentFilter, string searchString, int? page, int? id)
         {
+            BlogWholeInfo Blog = new BlogWholeInfo();
             var posts = db.Posts.Include(p => p.Author);
 
             if (searchString != null)
@@ -31,7 +32,6 @@ namespace HardSoftMVC.Controllers
             {
                 searchString = currentFilter;
             }
-
             ViewBag.CurrentFilter = searchString;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -68,7 +68,15 @@ namespace HardSoftMVC.Controllers
             if (isTrainer())
                 ViewBag.isTrainer = true;
 
-            return View(posts.ToPagedList(pageNumber, pageSize));
+           
+            
+            Blog.Posts = posts.ToPagedList(pageNumber, pageSize);
+            Blog.Tags = db.Tags.Take(10).ToList();
+
+            searchString = null;
+            
+
+            return View(Blog);
         }
 
         public Boolean isAdministrator()
@@ -116,6 +124,22 @@ namespace HardSoftMVC.Controllers
                 return HttpNotFound();
             }
             return View(post);
+        }
+
+        public ActionResult Search(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            List<Post> posts = new List<Post>();
+            var postIds = db.Tags.Where(a => a.Id == id).Select(a=>a.Posts).ToList();
+            
+            if (posts == null)
+            {
+                return HttpNotFound();
+            }
+            return View(posts);
         }
 
         // GET: Posts/Create
