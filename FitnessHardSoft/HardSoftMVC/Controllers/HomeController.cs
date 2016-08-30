@@ -37,11 +37,8 @@ namespace HardSoftMVC.Controllers
             {
                 foreach (var post in item.Posts)
                 {
-                    if (post.Title.Length >= 30)
-                        post.Title = method.TruncateAtWord(post.Title, 30);
-
-                    if (post.Content.Length >= 60)
-                        post.Title = method.TruncateAtWord(post.Title, 30);
+                    post.Title = method.TruncateAtWord(post.Title, 30);
+                    post.Content = method.TruncateAtWord(post.Content, 50);
 
                     post.Content = Regex.Replace(post.Content, @"<[^>]*>", String.Empty);
                 }
