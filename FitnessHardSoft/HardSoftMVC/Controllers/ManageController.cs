@@ -64,15 +64,13 @@ namespace HardSoftMVC.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
-            ApplicationDbContext db = new ApplicationDbContext();
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
-                HasCard = 1 //TO DO: CREATE CARD QUERY
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
             return View(model);
         }

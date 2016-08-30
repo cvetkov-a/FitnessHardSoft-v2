@@ -679,6 +679,14 @@ footer span {
     text-decoration: none;
 }
 
+.manage h2, .manage h4 {
+    text-align: center;
+}
+
+.manage h4 {
+    margin-bottom: 50px;
+}
+
 @media screen and (max-width: 993px) {
    .nav {
       display: none;

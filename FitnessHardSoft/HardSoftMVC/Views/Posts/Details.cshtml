@@ -74,7 +74,7 @@
                                                 </div>
                                                 <div class="panel-body">
                                                     <div class="head">
-                                                        <a href="@Url.Action("Details", "Posts", new { id = Model.Id })"><img src="~/images/news/@Model.ImageURL" class="img-responsive" alt=""></a>
+                                                        <a href="@Url.Action("Details", "Posts", new { id = Model.Id })"><img src="@Model.ImageURL" class="img-responsive" alt=""></a>
                                                     </div>
                                                     <div class="content">
                                                         @Html.Raw(Model.Content)

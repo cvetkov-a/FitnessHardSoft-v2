@@ -12,8 +12,6 @@ namespace HardSoftMVC.Models
         [Key]
         public int Id { get; set; }
 
-        public virtual List<Tag> Tags { get; set; }
-        public string TagsString { get; set; }
         [Required]
         [StringLength(200)]
         public string Title { get; set; }
