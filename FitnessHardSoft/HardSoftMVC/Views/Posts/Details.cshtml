@@ -1,4 +1,5 @@
-﻿@model HardSoftMVC.Models.Post
+﻿@model HardSoftMVC.Models.BlogDetails
+@using HardSoftMVC.Models.Extensions;
 
 @{
     ViewBag.Title = "Index";
@@ -50,6 +51,21 @@
                             <li><a href="@Url.Action("Index", "Posts")">Posts</a></li>
                             <li><a href="@Url.Action("Index", "Home")#trainers">Trainers</a></li>
                             <li><a href="@Url.Action("Index", "Home")#contact">Contact</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="user-avatar" data-toggle="dropdown">
+                                    <img class="img-responsive avatar" src="~/Content/Images/UserPhotos/@User.Identity.getAvatar()" alt="User Avatar" />
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Index", "Manage")">Manage</a></li>
+                                    <li>
+                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                        }
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                     <button class="navbar-toggle">
@@ -66,49 +82,80 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="new">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <div class="titlenew">
-                                                        <h3><a href="@Url.Action("Details", "Posts", new { id = Model.Id })">@Model.Title</a></h3>
-                                                    </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="titlenew">
+                                                    <h3><a href="@Url.Action("Details", "Posts", new { id = Model.Post.Id })">@Model.Post.Title</a></h3>
                                                 </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="head">
+                                                    <a href="@Url.Action("Details", "Posts", new { id = Model.Post.Id })"><img src="~/images/news/@Model.Post.ImageURL" class="img-responsive" alt=""></a>
+                                                </div>
+<<<<<<< HEAD
+                                                <div class="content">
+                                                    @Html.Raw(Model.Post.Content)
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <div class="meta">
+                                                    <div>
+                                                        <i class="fa fa-user"></i>
+                                                        <span>BY:</span>
+                                                        @if (Model.Post.Author != null)
+                                                        {
+                                                            <a href="">@Model.Post.Author.FullName</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>Anonymous</span>
+                                                        }
+=======
                                                 <div class="panel-body">
                                                     <div class="head">
                                                         <a href="@Url.Action("Details", "Posts", new { id = Model.Id })"><img src="@Model.ImageURL" class="img-responsive" alt=""></a>
+>>>>>>> origin/master
                                                     </div>
-                                                    <div class="content">
-                                                        @Html.Raw(Model.Content)
-                                                        <hr>
+                                                    <div>
+                                                        <i class="fa fa-calendar"></i>
+                                                        <span>@Model.Post.Date.ToString("MMMM dd, yyyy")</span>
                                                     </div>
-                                                </div>
-                                                <div class="panel-footer">
-                                                    <div class="meta">
-                                                        <div>
-                                                            <i class="fa fa-user"></i>
-                                                            <span>BY:</span>
-                                                            @if (Model.Author != null)
+                                                    <div>
+                                                        <i class="fa fa-folder-open-o"></i>
+                                                        <span>IN:</span>
+                                                        @for (int i = 0; i < Model.Post.Tags.Count; i++)
+                                                        {
+                                                            @Html.ActionLink(Model.Post.Tags[i].TagName, "Index", "Posts", new { searchString = Model.Post.Tags[i].TagName }, null)
+                                                            if (i < Model.Post.Tags.Count - 1)
                                                             {
-                                                                <a href="">@Model.Author.FullName</a>
+                                                                <span>, </span>
                                                             }
-                                                            else
-                                                            {
-                                                                <span>Anonymous</span>
-                                                            }
-                                                        </div>
-                                                        <div>
-                                                            <i class="fa fa-calendar"></i>
-                                                            <span>@Model.Date.ToString("MMMM dd, yyyy")</span>
-                                                        </div>
-                                                        <div>
-                                                            <i class="fa fa-folder-open-o"></i>
-                                                            <span>IN:</span>
-                                                            <a href="">Wordpress</a>
-                                                            <span>, </span>
-                                                            <a href="">PHP</a>
-                                                        </div>
+                                                        }
                                                     </div>
+                                                    <div class="read">
+                                                        <a href="@Url.Action("Details", "Posts", new { id = Model.Post.Id })">Read More</a>
+                                                    </div>
+                                                    @if (User.Identity.IsAuthenticated)
+                                                    {
+                                                        if (ViewBag.isAdmin == true || ViewBag.isTrainer == true)
+                                                        {
+                                                            <div class="read">
+                                                                <a href="@Url.Action("Edit", "Posts", new { id = Model.Post.Id })">Edit</a>
+                                                            </div>
+                                                        }
+
+                                                        if (ViewBag.isAdmin == true)
+                                                        {
+                                                            <div class="read">
+                                                                <a href="@Url.Action("Delete", "Posts", new { id = Model.Post.Id })">Remove</a>
+                                                            </div>
+                                                        }
+                                                    }
                                                 </div>
                                             </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -137,15 +184,10 @@
                                         <span>Tags</span>
                                     </div>
                                     <div class="panel-body">
-                                        <a href="">PHP</a>
-                                        <a href="">Wordpress</a>
-                                        <a href="">HTML</a>
-                                        <a href="">CSS</a>
-                                        <a href="">JavaScript</a>
-                                        <a href="">Web</a>
-                                        <a href="">Designer</a>
-                                        <a href="">Java</a>
-                                        <a href="">C#</a>
+                                        @foreach (var tag in Model.Tags)
+                                            {
+                                                @Html.ActionLink(tag.TagName, "Index", "Posts", new { searchString = tag.TagName }, null)
+                                            }
                                     </div>
                                 </div>
                             </div>

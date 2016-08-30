@@ -3,6 +3,30 @@
     ViewBag.Title = "Manage";
 }
 
+<<<<<<< HEAD
+</head>
+@model HardSoftMVC.Models.IndexViewModel
+
+<body>
+    <section class="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="panel login">
+                                <div class="panel-heading">
+                                    Manage your account
+                                </div>
+                                <div class="panel-body">
+                                     <div class="input-group">
+                                            
+                                            @if (Model.HasPassword)
+                                            {
+                                                @Html.ActionLink("Change your password", "ChangePassword")
+                                            }
+                                            else
+=======
 @using HardSoftMVC.Models.Extensions
 <aside class="sideBar">
     <header>
@@ -100,10 +124,27 @@
                                         <li><a href="@Url.Action("Index", "Manage")">Manage</a></li>
                                         <li>
                                             @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+>>>>>>> origin/master
                                             {
                                                 @Html.AntiForgeryToken()
                                                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
                                             }
+<<<<<<< HEAD
+                                            @if (Model.HasCard.Count>0)
+                                            {
+                                                <hr />
+                                                <br /><span><b>You have purchased</b></span>
+                                                foreach(var card in Model.HasCard)
+                                                {
+                                                    <br /><span>@card.CardName card, expiring on @card.ExpirationDate</span>
+                                                }
+                                            }
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+=======
                                         </li>
                                     </ul>
                                 </li>
@@ -199,6 +240,7 @@
                                 }*@
                         </dd>
                     </dl>
+>>>>>>> origin/master
                 </div>
             </div>
         </section>

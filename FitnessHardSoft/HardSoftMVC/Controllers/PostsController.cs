@@ -11,7 +11,6 @@ using HardSoftMVC.Models;
 using PagedList;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
-using HardSoftMVC.Classes;
 
 namespace HardSoftMVC.Controllers
 {
@@ -41,12 +40,21 @@ namespace HardSoftMVC.Controllers
                                        || s.Content.Contains(searchString));
             }
 
-            TruncateString method = new TruncateString();
-
             foreach (var post in posts)
             {
-                post.Title = method.TruncateAtWord(post.Title, 40);
-                post.Content = method.TruncateAtWord(post.Content, 300);
+                if (post.Title.Length >= 40)
+                {
+                    post.Title = post.Title.Substring(0, 40);
+
+                    post.Title += "...";
+                }
+
+                if (post.Content.Length >= 300)
+                {
+                    post.Content = post.Content.Substring(0, 300);
+
+                    post.Content += "...";
+                }
             }
 
             posts = posts.OrderByDescending(p => p.Date);
@@ -103,11 +111,14 @@ namespace HardSoftMVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Post post = db.Posts.Find(id);
+            BlogDetails details = new BlogDetails();
+            details.Post = post;
+            details.Tags = db.Tags.Take(20).ToList();
             if (post == null)
             {
                 return HttpNotFound();
             }
-            return View(post);
+            return View(details);
         }
 
         // GET: Posts/Create
