@@ -1,7 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+<<<<<<< HEAD
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+=======
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
+>>>>>>> refs/remotes/origin/master
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HardSoftMVC", "HardSoftMVC\HardSoftMVC.csproj", "{F64CF765-AB15-4370-84D9-A6B4940FAEC3}"
 EndProject
