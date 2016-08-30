@@ -92,7 +92,7 @@
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="head">
-                                                            <a href="@Url.Action("Details", "Posts", new { id = item.Id })"><img src="@item.ImageURL" class="img-responsive" alt=""></a>
+                                                            <a href="@Url.Action("Details", "Posts", new { id = item.Id })"><img src="~/images/@item.ImageURL" class="img-responsive" alt=""></a>
                                                         </div>
                                                         <div class="content">
                                                             @Html.Raw(item.Content)
@@ -120,9 +120,14 @@
                                                             <div>
                                                                 <i class="fa fa-folder-open-o"></i>
                                                                 <span>IN:</span>
-                                                                <a href="">Wordpress</a>
-                                                                <span>, </span>
-                                                                <a href="">PHP</a>
+                                                                @for (int i = 0; i < item.Tags.Count;i++ )
+                                                                {
+                                                                    @Html.ActionLink(item.Tags[i].TagName, "Index", "Posts", new { searchString = item.Tags[i].TagName }, null)
+                                                                    if(i<item.Tags.Count-1)
+                                                                    {
+                                                                        <span>, </span>
+                                                                    }
+                                                                }
                                                             </div>
                                                             <div class="read">
                                                                 <a href="@Url.Action("Details", "Posts", new { id = item.Id })">Read More</a>

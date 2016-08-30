@@ -33,11 +33,15 @@ namespace HardSoftMVC.Controllers
                 searchString = currentFilter;
             }
             ViewBag.CurrentFilter = searchString;
-
+            List<List<Tag>> PostResults = new List<List<Tag>>();
+            var additionalPosts = new List<Post>();
             if (!String.IsNullOrEmpty(searchString))
             {
+                List<string> TagsContainer = db.Tags.Select(a => a.TagName).ToList();
+                PostResults = db.Posts.Select(a=>a.Tags).ToList();
                 posts = posts.Where(s => s.Title.Contains(searchString)
-                                       || s.Content.Contains(searchString));
+                                       || s.Content.Contains(searchString)
+                                        );
             }
 
             foreach (var post in posts)
@@ -71,8 +75,7 @@ namespace HardSoftMVC.Controllers
            
             
             Blog.Posts = posts.ToPagedList(pageNumber, pageSize);
-            Blog.Tags = db.Tags.Take(10).ToList();
-
+            Blog.Tags = db.Tags.Take(20).ToList();
             searchString = null;
             
 
@@ -163,8 +166,26 @@ namespace HardSoftMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrators, Trainers")]
-        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,Date,Author_Id")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,Tags,TagsString,Date,Author_Id")] Post post)
         {
+            string Tagove = post.TagsString;
+            var TagsList = Tagove.Split(' ').ToList();
+            
+            List<Tag> TagsResult = new List<Tag>();
+            foreach(var tag in TagsList)
+            {
+                Tag check = new Tag();
+                check.TagName = tag;
+                List<string> existing = db.Tags.Select(a => a.TagName).ToList();
+                if(!existing.Contains(check.TagName))
+                {
+                    db.Tags.Add(check);
+                    db.SaveChanges();
+                }
+                TagsResult.Add(check);
+                db.SaveChanges();
+            }
+            post.Tags = TagsResult;
             if (ModelState.IsValid)
             {
                 db.Posts.Add(post);
@@ -195,7 +216,7 @@ namespace HardSoftMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Content,ImageURL,Date,Author_Id")] Post post)
+        public ActionResult Edit([Bind(Include = "Id,Title,Content,ImageURL,Tags,Date,Author_Id")] Post post)
         {
             if (ModelState.IsValid)
             {
