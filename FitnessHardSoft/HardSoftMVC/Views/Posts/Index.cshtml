@@ -1,5 +1,6 @@
 ﻿@model HardSoftMVC.Models.BlogWholeInfo
 @using PagedList.Mvc;
+@using HardSoftMVC.Models.Extensions;
 
 @{
     ViewBag.Title = "Index";
@@ -40,7 +41,7 @@
                     if (ViewBag.isAdmin == true || ViewBag.isTrainer == true)
                     {
                         <li><a href="@Url.Action("Create", "Posts")">Create</a></li>
-                    }
+                    }       
                 }
             </ul>
         </nav>
@@ -63,6 +64,21 @@
                                 {
                                     <li><a href="@Url.Action("Create", "Posts")">Create</a></li>
                                 }
+                                <li class="dropdown">
+                                    <a href="#" class="user-avatar" data-toggle="dropdown">
+                                        <img class="img-responsive avatar" src="~/Content/Images/UserPhotos/@User.Identity.getAvatar()" alt="User Avatar" />
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="@Url.Action("Index", "Manage")">Manage</a></li>
+                                        <li>
+                                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                            }
+                                        </li>
+                                    </ul>
+                                </li>
                             }
                         </ul>
                     </nav>
