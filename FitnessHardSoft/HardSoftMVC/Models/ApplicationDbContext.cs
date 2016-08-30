@@ -22,7 +22,6 @@ namespace HardSoftMVC.Models
 
         public System.Data.Entity.DbSet<HardSoftMVC.Models.Trainer> Trainers { get; set; }
         public System.Data.Entity.DbSet<HardSoftMVC.Models.Tag> Tags { get; set; }
-        public System.Data.Entity.DbSet<HardSoftMVC.Models.Card> Cards { get; set; }
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Post>()
@@ -36,7 +35,8 @@ namespace HardSoftMVC.Models
                 });
             base.OnModelCreating(modelBuilder);
         }*/
-
+        public System.Data.Entity.DbSet<HardSoftMVC.Models.Card> Cards { get; set; }
+        public System.Data.Entity.DbSet<HardSoftMVC.Models.TypeCard> Types { get; set; }
         public System.Data.Entity.DbSet<HardSoftMVC.Models.Contact> Contacts { get; set; }
     }
 }

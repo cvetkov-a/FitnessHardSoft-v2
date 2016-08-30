@@ -10,6 +10,6 @@ namespace HardSoftMVC.Models
         public int Id { get; set; }
         public DateTime DateOfCreating { get; set; }
         public DateTime ExpirationDate { get; set; }
-        public string TypeOfCard { get; set; }
+        public ApplicationUser Purchaser{ get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace HardSoftMVC.Models
         [StringLength(100)]
         public string FullName { get; set; }
         public string Avatar { get; internal set; }
-        public virtual List<Card> Cards{ get; set; }
+        public virtual List<Card> Card{ get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
