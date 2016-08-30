@@ -7,6 +7,7 @@ using System.Data.Entity;
 using HardSoftMVC.Models;
 using System.Text.RegularExpressions;
 using Microsoft.AspNet.Identity;
+using HardSoftMVC.Classes;
 
 namespace HardSoftMVC.Controllers
 {
@@ -30,22 +31,17 @@ namespace HardSoftMVC.Controllers
             List<CookMeIndexViewModel> viewModelList = new List<CookMeIndexViewModel>();
             viewModelList.Add(viewModel);
 
+            TruncateString method = new TruncateString();
+
             foreach (var item in viewModelList)
             {
                 foreach (var post in item.Posts)
                 {
                     if (post.Title.Length >= 30)
-                    {
-                        post.Title = post.Title.Substring(0, 30);
+                        post.Title = method.TruncateAtWord(post.Title, 30);
 
-                        post.Title += "...";
-                    }
-
-                    if (post.Content.Length >= 60) {
-                        post.Content = post.Content.Substring(0, 60);
-
-                        post.Content += "...";
-                    }
+                    if (post.Content.Length >= 60)
+                        post.Title = method.TruncateAtWord(post.Title, 30);
 
                     post.Content = Regex.Replace(post.Content, @"<[^>]*>", String.Empty);
                 }
