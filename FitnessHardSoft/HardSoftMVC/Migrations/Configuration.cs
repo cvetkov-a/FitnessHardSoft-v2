@@ -38,28 +38,28 @@ namespace HardSoftMVC.Migrations
                 CreateTrainer(context,
                     name: "John Doe",
                     information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae vel suscipit illo, ducimus delectus animi. Ullam quod impedit a et sed, ex, neque harum consectetur maxime asperiores iure! Quis.",
-                    imageURL: "http://localhost:50512/images/trainers/trainer.jpg",
+                    imageURL: "trainer.jpg",
                     date: new DateTime(2016, 03, 27, 17, 54, 48)
                 );
 
                 CreateTrainer(context,
                     name: "John Doe",
                     information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae vel suscipit illo, ducimus delectus animi. Ullam quod impedit a et sed, ex, neque harum consectetur maxime asperiores iure! Quis.",
-                    imageURL: "http://localhost:50512/images/trainers/trainer.jpg",
+                    imageURL: "trainer.jpg",
                     date: new DateTime(2016, 03, 27, 17, 54, 48)
                 );
 
                 CreateTrainer(context,
                     name: "John Doe",
                     information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae vel suscipit illo, ducimus delectus animi. Ullam quod impedit a et sed, ex, neque harum consectetur maxime asperiores iure! Quis.",
-                    imageURL: "http://localhost:50512/images/trainers/trainer.jpg",
+                    imageURL: "trainer.jpg",
                     date: new DateTime(2016, 03, 27, 17, 54, 48)
                 );
 
                 CreateTrainer(context,
                     name: "John Doe",
                     information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae vel suscipit illo, ducimus delectus animi. Ullam quod impedit a et sed, ex, neque harum consectetur maxime asperiores iure! Quis.",
-                    imageURL: "http://localhost:50512/images/trainers/trainer.jpg",
+                    imageURL: "trainer.jpg",
                     date: new DateTime(2016, 03, 27, 17, 54, 48)
                 );
 

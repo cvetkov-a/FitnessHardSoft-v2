@@ -254,3 +254,5 @@ D:\Stuff\Softuni\FinalProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin
 D:\Stuff\Softuni\FinalProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\obj\Debug\HardSoftMVC.csprojResolveAssemblyReference.cache
 D:\Stuff\Softuni\FinalProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\obj\Debug\HardSoftMVC.dll
 D:\Stuff\Softuni\FinalProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\obj\Debug\HardSoftMVC.pdb
+D:\Stuff\Softuni\FinalProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\PagedList.dll
+D:\Stuff\Softuni\FinalProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\PagedList.Mvc.dll

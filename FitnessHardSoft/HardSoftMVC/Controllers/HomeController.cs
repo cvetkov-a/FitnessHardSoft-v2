@@ -41,8 +41,8 @@ namespace HardSoftMVC.Controllers
                         post.Title += "...";
                     }
 
-                    if (post.Content.Length >= 60) {
-                        post.Content = post.Content.Substring(0, 60);
+                    if (post.Content.Length >= 45) {
+                        post.Content = post.Content.Substring(0, 45);
 
                         post.Content += "...";
                     }

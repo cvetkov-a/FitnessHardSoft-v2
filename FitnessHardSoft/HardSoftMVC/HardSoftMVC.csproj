@@ -217,6 +217,7 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\BlogWholeInfo.cs" />
+    <Compile Include="Models\Card.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\CookMeIndexViewModel.cs" />
     <Compile Include="Models\IdentityExtensions.cs" />

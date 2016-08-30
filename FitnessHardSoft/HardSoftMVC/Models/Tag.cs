@@ -13,7 +13,7 @@ namespace HardSoftMVC.Models
         public int Id { get; set; }
         public string TagName { get; set; }
         public virtual List<Post> Posts { get; set; }
-        private int defaultValue = 34;
+        private int defaultValue = 0;
         public int CountOfSearches { get{return defaultValue;} set{defaultValue=value;} }
 
 

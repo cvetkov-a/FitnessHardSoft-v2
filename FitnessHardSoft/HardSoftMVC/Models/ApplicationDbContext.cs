@@ -22,6 +22,7 @@ namespace HardSoftMVC.Models
 
         public System.Data.Entity.DbSet<HardSoftMVC.Models.Trainer> Trainers { get; set; }
         public System.Data.Entity.DbSet<HardSoftMVC.Models.Tag> Tags { get; set; }
+        public System.Data.Entity.DbSet<HardSoftMVC.Models.Card> Cards { get; set; }
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Post>()
