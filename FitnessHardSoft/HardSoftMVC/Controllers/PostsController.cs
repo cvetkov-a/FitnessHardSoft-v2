@@ -42,7 +42,7 @@ namespace HardSoftMVC.Controllers
                                        || s.Content.Contains(searchString));
             }
 
-            Method method = new Method();
+            TruncateString method = new TruncateString();
 
             foreach (var post in posts)
             {
