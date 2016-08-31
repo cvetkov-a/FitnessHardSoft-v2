@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HardSoftMVC.Models;
+using System.Collections.Generic;
 
 namespace HardSoftMVC.Controllers
 {
@@ -32,9 +33,9 @@ namespace HardSoftMVC.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -64,13 +65,25 @@ namespace HardSoftMVC.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            ApplicationDbContext db = new ApplicationDbContext();
+            var cards = db.Cards.Where(a => a.Purchaser.Id == userId).Select(a => a).ToList();
+            List<ManageCardProps> cardNames = new List<ManageCardProps>();
+            foreach(var c in cards)
+            {
+                    ManageCardProps cardName = new ManageCardProps();
+                    var part = db.Cards.Where(a => a.Id == c.Id).Select(a => a.CardId.Type).ToList();
+                    cardName.CardName = part[0].ToString();
+                    cardName.ExpirationDate = c.ExpirationDate;
+                    cardNames.Add(cardName);
+            }
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                HasCard = cardNames
             };
             return View(model);
         }
@@ -333,7 +346,7 @@ namespace HardSoftMVC.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -384,6 +397,6 @@ namespace HardSoftMVC.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

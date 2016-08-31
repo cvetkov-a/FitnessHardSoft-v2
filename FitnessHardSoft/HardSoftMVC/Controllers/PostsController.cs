@@ -11,7 +11,6 @@ using HardSoftMVC.Models;
 using PagedList;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
-using HardSoftMVC.Classes;
 
 namespace HardSoftMVC.Controllers
 {
@@ -22,6 +21,7 @@ namespace HardSoftMVC.Controllers
         // GET: Posts
         public ActionResult Index(string currentFilter, string searchString, int? page)
         {
+            BlogWholeInfo BlogWholeInfo = new BlogWholeInfo();
             var posts = db.Posts.Include(p => p.Author);
 
             if (searchString != null)
@@ -41,12 +41,21 @@ namespace HardSoftMVC.Controllers
                                        || s.Content.Contains(searchString));
             }
 
-            TruncateString method = new TruncateString();
-
             foreach (var post in posts)
             {
-                post.Title = method.TruncateAtWord(post.Title, 40);
-                post.Content = method.TruncateAtWord(post.Content, 300);
+                if (post.Title.Length >= 40)
+                {
+                    post.Title = post.Title.Substring(0, 40);
+
+                    post.Title += "...";
+                }
+
+                if (post.Content.Length >= 300)
+                {
+                    post.Content = post.Content.Substring(0, 300);
+
+                    post.Content += "...";
+                }
             }
 
             posts = posts.OrderByDescending(p => p.Date);
@@ -59,8 +68,9 @@ namespace HardSoftMVC.Controllers
 
             if (isTrainer())
                 ViewBag.isTrainer = true;
-
-            return View(posts.ToPagedList(pageNumber, pageSize));
+            BlogWholeInfo.Posts = posts.ToPagedList(pageNumber, pageSize);
+            BlogWholeInfo.Tags = db.Tags.Select(a => a).Take(20).ToList();
+            return View(BlogWholeInfo);
         }
 
         public Boolean isAdministrator()
@@ -103,11 +113,14 @@ namespace HardSoftMVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Post post = db.Posts.Find(id);
+            BlogDetails details = new BlogDetails();
+            details.Post = post;
+            details.Tags = db.Tags.Take(20).ToList();
             if (post == null)
             {
                 return HttpNotFound();
             }
-            return View(post);
+            return View(details);
         }
 
         // GET: Posts/Create
@@ -131,8 +144,32 @@ namespace HardSoftMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrators, Trainers")]
-        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,Date,Author_Id")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,TagsString,Date,Author_Id")] Post post)
         {
+            string Tagove = post.TagsString;
+            var TagsList = Tagove.Split(' ').ToList();
+
+            List<Tag> TagsResult = new List<Tag>();
+            foreach (var tag in TagsList)
+            {
+                Tag check = new Tag();
+                check.TagName = tag;
+                List<string> existing = db.Tags.Select(a => a.TagName).ToList();
+                if (existing.Contains(check.TagName)==false)
+                {
+                    db.Tags.Add(check);
+                    db.SaveChanges();
+                    TagsResult.Add(check);
+                }
+                else
+                {
+                    var partialId = db.Tags.Where(a=>a.TagName==tag).Select(a=>a.Id).ToList();
+                    check.Id = partialId[0];
+                    TagsResult.Add(check);
+                }
+                db.SaveChanges();
+            }
+            post.Tags = TagsResult;
             if (ModelState.IsValid)
             {
                 db.Posts.Add(post);

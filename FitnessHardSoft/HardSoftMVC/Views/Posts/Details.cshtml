@@ -1,4 +1,4 @@
-﻿@model HardSoftMVC.Models.Post
+﻿@model HardSoftMVC.Models.BlogDetails
 
 @{
     ViewBag.Title = "Index";
@@ -69,15 +69,15 @@
                                             <div class="panel">
                                                 <div class="panel-heading">
                                                     <div class="titlenew">
-                                                        <h3><a href="@Url.Action("Details", "Posts", new { id = Model.Id })">@Model.Title</a></h3>
+                                                        <h3><a href="@Url.Action("Details", "Posts", new { id = Model.Post.Id })">@Model.Post.Title</a></h3>
                                                     </div>
                                                 </div>
                                                 <div class="panel-body">
                                                     <div class="head">
-                                                        <a href="@Url.Action("Details", "Posts", new { id = Model.Id })"><img src="@Model.ImageURL" class="img-responsive" alt=""></a>
+                                                        <a href="@Url.Action("Details", "Posts", new { id = Model.Post.Id })"><img src="~/images/news/@Model.Post.ImageURL" class="img-responsive" alt=""></a>
                                                     </div>
                                                     <div class="content">
-                                                        @Html.Raw(Model.Content)
+                                                        @Html.Raw(Model.Post.Content)
                                                         <hr>
                                                     </div>
                                                 </div>
@@ -86,9 +86,9 @@
                                                         <div>
                                                             <i class="fa fa-user"></i>
                                                             <span>BY:</span>
-                                                            @if (Model.Author != null)
+                                                            @if (Model.Post.Author != null)
                                                             {
-                                                                <a href="">@Model.Author.FullName</a>
+                                                                <a href="">@Model.Post.Author.FullName</a>
                                                             }
                                                             else
                                                             {
@@ -97,14 +97,19 @@
                                                         </div>
                                                         <div>
                                                             <i class="fa fa-calendar"></i>
-                                                            <span>@Model.Date.ToString("MMMM dd, yyyy")</span>
+                                                            <span>@Model.Post.Date.ToString("MMMM dd, yyyy")</span>
                                                         </div>
                                                         <div>
                                                             <i class="fa fa-folder-open-o"></i>
                                                             <span>IN:</span>
-                                                            <a href="">Wordpress</a>
-                                                            <span>, </span>
-                                                            <a href="">PHP</a>
+                                                            @for (int i = 0; i < Model.Tags.Count; i++)
+{
+    @Html.ActionLink(Model.Tags[i].TagName, "Index", "Posts", new { searchString = Model.Tags[i].TagName }, null)
+    if (i < Model.Tags.Count - 1)
+    {
+        <span>, </span>
+    }
+}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -137,15 +142,10 @@
                                         <span>Tags</span>
                                     </div>
                                     <div class="panel-body">
-                                        <a href="">PHP</a>
-                                        <a href="">Wordpress</a>
-                                        <a href="">HTML</a>
-                                        <a href="">CSS</a>
-                                        <a href="">JavaScript</a>
-                                        <a href="">Web</a>
-                                        <a href="">Designer</a>
-                                        <a href="">Java</a>
-                                        <a href="">C#</a>
+                                        @foreach (var tag in Model.Tags)
+{
+    @Html.ActionLink(tag.TagName, "Index", "Posts", new { searchString = tag.TagName }, null)
+}
                                     </div>
                                 </div>
                             </div>
