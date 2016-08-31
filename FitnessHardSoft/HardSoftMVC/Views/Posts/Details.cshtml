@@ -144,7 +144,7 @@
                                     <div class="panel-body">
                                         @foreach (var tag in Model.Tags)
 {
-    @Html.ActionLink(tag.TagName, "Index", "Posts", new { searchString = tag.TagName }, null)
+    @Html.ActionLink(tag, "Index", "Posts", new { searchString = tag }, null)
 }
                                     </div>
                                 </div>

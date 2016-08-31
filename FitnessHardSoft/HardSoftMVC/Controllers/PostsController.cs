@@ -60,8 +60,17 @@ namespace HardSoftMVC.Controllers
 
             if (isTrainer())
                 ViewBag.isTrainer = true;
+            var allTags = db.Tags.Select(a => a.TagName).Take(20).ToList();
+            var tagsResult = new List<string>();
+            foreach(var tag in allTags)
+            {
+                if(!tagsResult.Contains(tag))
+                {
+                    tagsResult.Add(tag);
+                }
+            }
+            BlogWholeInfo.Tags = tagsResult;
             BlogWholeInfo.Posts = posts.ToPagedList(pageNumber, pageSize);
-            BlogWholeInfo.Tags = db.Tags.Select(a => a).Take(20).ToList();
             return View(BlogWholeInfo);
         }
 
@@ -106,8 +115,17 @@ namespace HardSoftMVC.Controllers
             }
             Post post = db.Posts.Find(id);
             BlogDetails details = new BlogDetails();
-            details.Post = post;
-            details.Tags = db.Tags.Take(20).ToList();
+            details.Post = post; 
+            var allTags = db.Tags.Select(a => a.TagName).Take(20).ToList();
+            var tagsResult = new List<string>();
+            foreach (var tag in allTags)
+            {
+                if (!tagsResult.Contains(tag))
+                {
+                    tagsResult.Add(tag);
+                }
+            }
+            details.Tags = tagsResult;
             if (post == null)
             {
                 return HttpNotFound();
