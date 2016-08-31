@@ -28,7 +28,7 @@
                                     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                                     {
                                         @Html.AntiForgeryToken()
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        @Html.ValidationSummary("", new { @class = "text-danger" })
                                         <div class="input-group">
                                             @Html.LabelFor(m => m.Email, new { @class = "control-label" })
                                             @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
@@ -41,12 +41,10 @@
                                             @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
                                             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
                                         </div>
-                                        <div class="form-group">
-                                            @Html.LabelFor(m => m.Avatar, new { @class = "col-md-2 control-label" })
-                                            <div class="col-md-4">
-                                                @Html.TextBoxFor(m => m.Avatar, new { type = "file", @class = "form-control" })
-                                                @Html.ValidationMessageFor(model => model.Avatar)
-                                            </div>
+                                        <div class="input-group">
+                                            @Html.LabelFor(m => m.Avatar, new { @class = "control-label" })
+                                            @Html.TextBoxFor(m => m.Avatar, new { type = "file", @class = "form-control file" })
+                                            @Html.ValidationMessageFor(model => model.Avatar)
                                         </div>
                                         <input type="submit" class="btn" value="Register">
                                     }
