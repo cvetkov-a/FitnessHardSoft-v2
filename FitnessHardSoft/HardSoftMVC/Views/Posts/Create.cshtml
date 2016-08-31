@@ -56,21 +56,6 @@
             </div>
         </div>   
         <div class="form-group">
-            <select name="Author_Id">
-                @if (ViewBag.isAdmin == true)
-                {
-                    foreach (var author in ViewBag.authors)
-                    {
-                        <option value="@author.Id">@author.UserName</option>
-                    }
-                }
-                else
-                {
-                    <option value="@ViewBag.IdentityAuthorId">@ViewBag.IdentityAuthorName</option>
-                }
-            </select>
-        </div>
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
