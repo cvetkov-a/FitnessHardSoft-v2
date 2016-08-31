@@ -68,82 +68,48 @@ namespace HardSoftMVC.Migrations
                 );
 
                 CreatePost(context,
-                    title: "Work Begins on HTML5.1",
-                    body: @"<p>The World Wide Web Consortium (W3C) has begun work on <b>HTML5.1</b>, and this time it is handling the creation of the standard a little differently. The specification has its <b><a href=""https://w3c.github.io/html/"">own GitHub project</a></b> where anyone can see what is happening and propose changes.</p>
-                    <p>The organization says the goal for the new specification is ""to <b>match reality better</b>, to make the specification as clear as possible to readers, and of course to make it possible for all stakeholders to propose improvements, and understand what makes changes to HTML successful.""</p>
-                    <p>Creating HTML5 took years, but W3C hopes using GitHub will speed up the process this time around. It plans to release a candidate recommendation for HTML5.1 by <b>June</b> and a full recommendation in <b>September</b>.</p>",
-                    imageUrl: "work2.jpg",
-                    TagsString: "PHP Javascript",
+                    title: "Carb Cycling That Actually Works",
+                    body: @"There's a lot of hype about carb cycling, and many claims are being made about it that are yet to be substantiated. The idea that alternating between high and low-carb days will accelerate fat loss is, well, hogwash. The truth is, any diet that causes you to expend more energy than you consume, whether it's daily or even weekly, will result in weight loss. That said, there are some practical ways of using this method for burning fat while preserving muscle and strength.Carb cycling is basically just planned changes in carbohydrate intake in order to accelerate fat loss and/or avoid weight loss plateaus. The traditional approach has you rotate through high-carb, moderate-carb, and low-carb days while protein intake remains unchanged. Fat intake becomes low when carbs are high, and high when carbs are low.",
+                    imageUrl: "carbs.jpeg",
+                    TagsString: "Carb Cycling",
                     date: new DateTime(2016, 03, 27, 17, 53, 48),
                     authorUsername: "merry@gmail.com"
                 );
 
                 CreatePost(context,
-                    title: "Windows 10 Preview with Bash Support Now Available",
-                    body: @"<p>Microsoft has released a new <b>Windows 10 Insider Preview</b> that includes native support for <b>Bash running on Ubuntu Linux</b>. The company first announced the new feature at last week''s Build development conference, and it was one of the biggest stories of the event. The current process for installing Bash is a little complication, but Microsoft has a blog post that explains how the process works.</p>
-                    <p>The preview build also includes <b>Cortana</b> upgrades, extensions support, the new <b>Skype</b> Universal Windows Platform app and some interface improvements.</p>",
-                    imageUrl: "work2.jpg",
-                    TagsString: "PHP Javascript",
+                    title: "The Single Best Muscle-Building Method",
+                    body: @"A recent study found that when it comes to hypertrophy (muscle growth), if you go to muscle failure the weight used doesn't really matter. The same amount of muscle growth and protein synthesis occurred with 3 sets to failure using 30% and 3 sets to failure using 80% of your maximum load.What does that mean? Training to muscle failure, regardless of the load, leads to a maximal recruitment of muscle fibers.Shocked? I was. It's not so much the value of training to failure that surprised me, but rather the fact that when it comes to stimulating hypertrophy, the act of reaching muscle failure might be the MAIN trigger for growth. Not the weight lifted or the explosiveness used, but the muscle failure itself.",
+                    imageUrl: "muscle.jpg",
+                    TagsString: "Muscle Gain",
                     date: new DateTime(2016, 05, 11, 08, 22, 03),
                     authorUsername: "merry@gmail.com"
                 );
 
                 CreatePost(context,
-                    title: "Atom Text Editor Gets New Windows Features",
-                    body: @"<p>GitHub has released <b>Atom 1.7</b>, and the updated version of the text editor offers improvements for Windows developers. Specifically, it is now easier to build in Visual Studio, and it now supports the Appveyor CI continuous integration service for Windows.</p>
-                    <p>Other new features include improved tab switching, tree view and crash recovery. GitHub noted, ""Crashes are nobody''s idea of fun, but in case Atom does crash on you, it periodically saves your editor state. After relaunching Atom after a crash, you should find all your work saved and ready to go.""</p>
-                    <p>GitHub has also released a beta preview of Atom 1.8.</p>",
-                    imageUrl: "work2.jpg",
-                    TagsString: "PHP Javascript",
+                    title: "Whey vs. Casein: The Real Story",
+                    body: @"Casein results in greater deposition of protein than whey, which simply means more muscle. Whey causes protein synthesis to increase rapidly and to a high degree, but it doesn't last long. There's an increase in protein synthesis and protein oxidation, but there's no change in protein breakdown.That last point is a huge negative for whey. Contrast that with casein, which, like whey, increases protein synthesis but inhibits breakdown to a large degree.A good number of studies have confirmed that casein leads to superior gains of lean mass and strength.One study using weight-trained subjects showed a doubling of lean mass gains and 50% greater fat loss over that of the whey group. The casein group also increased bench, shoulder press, and leg extension strength by a collective 59% whereas the whey group only had a 28% increase in strength.Another study, this one with burn patients, showed that 70-75 grams of casein outperformed the same amount of whey. The casein group gained lean muscle twice as fast as the whey group, despite having to deal with the incredibly high metabolism and increased protein oxidation from injuries.And those two are just a very small sampling of studies that have shown the superiority of generic casein. There are, however, sophisticated caseins whose muscle-building properties go much further than the generic, garden-variety caseins.",
+                    imageUrl: "whey.jpg",
+                    TagsString: "Whey Casein",
                     date: new DateTime(2016, 03, 27, 17, 53, 48),
                     authorUsername: "merry@gmail.com"
                 );
 
                 CreatePost(context,
-                    title: "SoftUni 3.0 Just Launched",
-                    body: @"<p>The <b>Software University (SoftUni)</b> launched a new training methodology and training program for software engineers in Sofia.</p>
-                    <p>It is a big step ahead. Now SoftUni offers several professions:</p>
-                    <ul>
-                      <li>PHP Developer</li>
-                      <li>JavaScript Developer</li>
-                      <li>C# Web Developer</li>
-                      <li>Java Web Developer</li>
-                    </ul>",
-                    imageUrl: "work2.jpg",
-                    TagsString: "PHP Javascript",
+                    title: "The Five Principles of Radical Fat Loss",
+                    body: @"If you want to lose fat fast, you need to do work and you need to do it often. In almost all cases, it's more effective to spread your activity over a greater period of time (while still allowing for rest). For fat loss I like training twice per day, splitting it between weight training and cardio.Of course, training twice per day is not possible for some people, in which case I allow them to do the weight training and cardio back-to-back, as long as they ensure the weights come first.The high level of frequency ensures a consistently elevated metabolic rate, a tremendous and constant surge of EPOC (Excess Post-exercise Oxygen Consumption) and the resultant boost in the rate of energy expenditure that accompanies those things.For the sake of demonstration, here's an actual 3-week schedule for one of my online coaching clients, whose goal was to lose 18 pounds of fat in eight weeks (it wound up taking six weeks).",
+                    imageUrl: "fatloss.jpg",
+                    TagsString: "Fatloss",
                     date: new DateTime(2016, 02, 18, 22, 14, 38),
                     authorUsername: "pesho@gmail.com"
                 );
 
                 CreatePost(context,
-                    title: "Git 2.8 Adds Security and Productivity Features",
-                    body: @"<p>Version 2.8 of the open-source distributed version-control system Git has been released. The new edition provides a variety of new features, bugfixes and other improvements.</p>
-                    <p>According to GitHub, the most notable new features include:</p>
-                    <ul>
-                    <li><strong>Parallel fetches of submodules:</strong> “Using ‘git submodules,’ one Git repository can include other Git repositories as subdirectories. This can be a useful way to include libraries or other external dependencies into your main project. The top-level repository specifies which submodules it wants to include, and which version of each submodule,” wrote Jeff King, a Git team member, in a <a href=""https://github.com/blog/2131-git-2-8-has-been-released"">blog post</a>. According to him, if users have multiple submodules, fetches can be time-consuming. The latest release allows users to fetch from multiple submodules in parallel.</li>
-                    <li><strong>Don’t guess my identity: </strong>Instead of using one e-mail address for all of a user’s open-source projects, they can now tell Git what user name and e-mail they want to use before they commit.</li>
-                    <li><strong>Convergences with Git for Windows:</strong> The Git team has been working on making Git as easy to work with on Windows as it is on Linux and OS X. The latest release includes Git commands rewritten in C; Windows-specific changes from the Git for Windows project; and the ability to accept both LF and CRLF line endings. “This continuing effort will make it easier to keep the functionality of Git in sync across platforms as new features are added,” King wrote.</li>
-                    <li><strong>Security fixes: </strong>Git 2.8 addresses the vulnerability CVE-2016-2324. There have not been any reported exploits, but the vulnerability could execute arbitrary code when cloning a malicious repository, according to King.</li>
-                    </ul>
-                    <p>Other features include the ability to turn off Git’s clean and smudge filters; the ability to see where a particular setting came from; the ability to easily diagnose end-of-line problems; the ability to see a remote repository’s default branch; and support for cloning via the rsync protocol has been dropped.</p>
-                    <p>The full release notes are available <a href=""https://github.com/git/git/blob/v2.8.0/Documentation/RelNotes/2.8.0.txt"">here</a>.</p>",
-                    imageUrl: "work2.jpg",
-                    TagsString: "PHP Javascript",
+                    title: "Steroids for Dummies",
+                    body: @"Anabolic steroids are synthetic analogs or derivatives of Testosterone and nor-testosterone. In the 1930s, scientists found that these anabolic steroids could increase the growth of muscle in lab animals. The compounds were then used to treat debilitating diseases in humans.In the 1950s, a doctor, John Ziegler had dispensed an oral anabolic steroid by the name of Dianabol. Soon after, athletes began to use this steroid in order to increase muscle mass and strength. Soon, more and more analogs and derivatives were being made available to athletes.While all steroids have the same four ring carbon structure, simple chemical alterations produced different effects in terms of anabolic/androgenic activity. Anabolic activity refers to the steroid's ability to facilitate skeletal muscle growth, while androgenic activity refers to how potent the drug is at inducing the development of male sexual characteristics (facial hair, deep voice, the ability to channel surf and watch six TV programs at once, etc.)",
+                    imageUrl: "piana.jpg",
+                    TagsString: "Steroids",
                     date: new DateTime(2016, 04, 11, 19, 02, 05),
                     authorUsername: "geshu@gmail.com"
-                );
-
-                CreatePost(context,
-                    title: "Rogue Wave Updates Zend Framework",
-                    body: @"<p>Rogue Wave is updating its open-source framework for developing Web applications and services. According to the company, this is the first major release in four years. Zend Framework 3 features support for PHP 7, middleware runtime and performance enhancements.</p>
-                    <p>The newly released support for PHP 7 aims to simplify how developers create, debug, monitor and deploy modern Web and mobile apps in PHP 7. “This is an exciting time to be a PHP developer,” said Zeev Suraski, cofounder of Zend and CTO of Rogue Wave. “With Zend Framework 3, we’re continuing our quest to make creating PHP applications simpler, more accessible and faster.”</p>
-                    <p>In addition, version 3 of the framework features an architectural structure that allows developers to use components within Zend Framework apps or any other framework in order to reduce dependencies, and to enable reuse within the PHP ecosystem.</p>
-                    <p>Another key update to the solution is a new middleware runtime. Expressive is designed to focus on simplicity and interoperability, and it enables developers to customize their solutions.</p>
-                    <p>“I’m extremely proud of the work we’ve done with Expressive,” said Matthew Weier O’Phinney, principal engineer and Zend Framework project lead at Rogue Wave. “Expressive signals the future of PHP applications, composed of layered, single-purpose PSR-7 middleware.”</p>",
-                    imageUrl: "work2.jpg",
-                    TagsString: "PHP Javascript",
-                    date: new DateTime(2016, 06, 30, 17, 36, 52),
-                    authorUsername: "merry@gmail.com"
                 );
 
                 CreateTypeCard(context,
