@@ -11,6 +11,7 @@ using HardSoftMVC.Models;
 using PagedList;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
+using HardSoftMVC.Classes;
 
 namespace HardSoftMVC.Controllers
 {
@@ -41,21 +42,12 @@ namespace HardSoftMVC.Controllers
                                        || s.Content.Contains(searchString));
             }
 
+            Method method = new Method();
+
             foreach (var post in posts)
             {
-                if (post.Title.Length >= 40)
-                {
-                    post.Title = post.Title.Substring(0, 40);
-
-                    post.Title += "...";
-                }
-
-                if (post.Content.Length >= 300)
-                {
-                    post.Content = post.Content.Substring(0, 300);
-
-                    post.Content += "...";
-                }
+                post.Title = method.TruncateAtWord(post.Title, 40);
+                post.Content = method.TruncateAtWord(post.Content, 300);
             }
 
             posts = posts.OrderByDescending(p => p.Date);
