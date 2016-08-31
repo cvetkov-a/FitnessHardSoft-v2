@@ -65,7 +65,7 @@ namespace HardSoftMVC.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
-<<<<<<< HEAD
+			
             ApplicationDbContext db = new ApplicationDbContext();
             var cards = db.Cards.Where(a => a.Purchaser.Id == userId).Select(a => a).ToList();
             List<ManageCardProps> cardNames = new List<ManageCardProps>();
@@ -77,21 +77,14 @@ namespace HardSoftMVC.Controllers
                     cardName.ExpirationDate = c.ExpirationDate;
                     cardNames.Add(cardName);
             }
-
-=======
->>>>>>> origin/master
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-<<<<<<< HEAD
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
                 HasCard = cardNames
-=======
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
->>>>>>> origin/master
             };
             return View(model);
         }
