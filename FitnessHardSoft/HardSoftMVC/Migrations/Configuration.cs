@@ -40,30 +40,30 @@ namespace HardSoftMVC.Migrations
                 AddUserToRole(context, "geshu@gmail.com", "Trainers");
 
                 CreateTrainer(context,
-                    name: "John Doe",
-                    information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae vel suscipit illo, ducimus delectus animi. Ullam quod impedit a et sed, ex, neque harum consectetur maxime asperiores iure! Quis.",
-                    imageURL: "trainer.jpg",
+                    name: "Dwayne Johnson",
+                    information: "Dwayne Douglas Johnson (born May 2, 1972), also known by his ring name The Rock, is an American-Canadian actor, producer, and semi-retired professional wrestler, currently signed to WWE.",
+                    imageURL: "therock.jpg",
                     date: new DateTime(2016, 03, 27, 17, 54, 48)
                 );
 
                 CreateTrainer(context,
-                    name: "John Doe",
-                    information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae vel suscipit illo, ducimus delectus animi. Ullam quod impedit a et sed, ex, neque harum consectetur maxime asperiores iure! Quis.",
-                    imageURL: "trainer.jpg",
+                    name: "Lazar Angelov",
+                    information: "He owns some of the best abs in the world. As a personal trainer he has been able to transform the bodies of thousands of people and to make his motivation and knowledge contagious to them.",
+                    imageURL: "lazar.jpg",
                     date: new DateTime(2016, 03, 27, 17, 54, 48)
                 );
 
                 CreateTrainer(context,
-                    name: "John Doe",
-                    information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae vel suscipit illo, ducimus delectus animi. Ullam quod impedit a et sed, ex, neque harum consectetur maxime asperiores iure! Quis.",
-                    imageURL: "trainer.jpg",
+                    name: "Jeff Seid",
+                    information: "Jeff Seid is an American professional bodybuilder and fitness model who is best known for his charming look and his bodybuilding. He was born on  12, June 1994 in Renton, Washington. He is 21 year old and standing in 6 feet height and 88 kg weight. He has millions of followers on his social network.",
+                    imageURL: "jeffseid.jpg",
                     date: new DateTime(2016, 03, 27, 17, 54, 48)
                 );
 
                 CreateTrainer(context,
-                    name: "John Doe",
-                    information: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae vel suscipit illo, ducimus delectus animi. Ullam quod impedit a et sed, ex, neque harum consectetur maxime asperiores iure! Quis.",
-                    imageURL: "trainer.jpg",
+                    name: "Ronnie Coleman",
+                    information: "Ronnie Dean Coleman (born May 13, 1964) is a retired American professional bodybuilder and the winner of the Mr. Olympia bodybuilding title 8 years in a row. Alongside his eight Mr. Olympia wins as a professional bodybuilder, he holds the record for most wins as an IFBB professional with 26.",
+                    imageURL: "ronnie.jpg",
                     date: new DateTime(2016, 03, 27, 17, 54, 48)
                 );
 
