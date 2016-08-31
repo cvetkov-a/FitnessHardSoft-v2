@@ -21,6 +21,7 @@ namespace HardSoftMVC.Controllers
         // GET: Posts
         public ActionResult Index(string currentFilter, string searchString, int? page)
         {
+            BlogWholeInfo BlogWholeInfo = new BlogWholeInfo();
             var posts = db.Posts.Include(p => p.Author);
 
             if (searchString != null)
@@ -67,8 +68,9 @@ namespace HardSoftMVC.Controllers
 
             if (isTrainer())
                 ViewBag.isTrainer = true;
-
-            return View(posts.ToPagedList(pageNumber, pageSize));
+            BlogWholeInfo.Posts = posts.ToPagedList(pageNumber, pageSize);
+            BlogWholeInfo.Tags = db.Tags.Select(a => a).Take(20).ToList();
+            return View(BlogWholeInfo);
         }
 
         public Boolean isAdministrator()
@@ -142,8 +144,32 @@ namespace HardSoftMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrators, Trainers")]
-        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,Date,Author_Id")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Content,ImageURL,TagsString,Date,Author_Id")] Post post)
         {
+            string Tagove = post.TagsString;
+            var TagsList = Tagove.Split(' ').ToList();
+
+            List<Tag> TagsResult = new List<Tag>();
+            foreach (var tag in TagsList)
+            {
+                Tag check = new Tag();
+                check.TagName = tag;
+                List<string> existing = db.Tags.Select(a => a.TagName).ToList();
+                if (existing.Contains(check.TagName)==false)
+                {
+                    db.Tags.Add(check);
+                    db.SaveChanges();
+                    TagsResult.Add(check);
+                }
+                else
+                {
+                    var partialId = db.Tags.Where(a=>a.TagName==tag).Select(a=>a.Id).ToList();
+                    check.Id = partialId[0];
+                    TagsResult.Add(check);
+                }
+                db.SaveChanges();
+            }
+            post.Tags = TagsResult;
             if (ModelState.IsValid)
             {
                 db.Posts.Add(post);

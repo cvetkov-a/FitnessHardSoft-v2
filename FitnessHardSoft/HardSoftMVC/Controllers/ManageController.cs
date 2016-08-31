@@ -33,9 +33,9 @@ namespace HardSoftMVC.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -65,7 +65,6 @@ namespace HardSoftMVC.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
-			
             ApplicationDbContext db = new ApplicationDbContext();
             var cards = db.Cards.Where(a => a.Purchaser.Id == userId).Select(a => a).ToList();
             List<ManageCardProps> cardNames = new List<ManageCardProps>();
@@ -347,7 +346,7 @@ namespace HardSoftMVC.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -398,6 +397,6 @@ namespace HardSoftMVC.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

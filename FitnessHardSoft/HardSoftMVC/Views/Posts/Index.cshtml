@@ -1,5 +1,6 @@
-﻿@model PagedList.IPagedList<HardSoftMVC.Models.Post>
+﻿@model HardSoftMVC.Models.BlogWholeInfo
 @using PagedList.Mvc;
+@using HardSoftMVC.Models.Extensions;
 
 @{
     ViewBag.Title = "Index";
@@ -40,7 +41,7 @@
                     if (ViewBag.isAdmin == true || ViewBag.isTrainer == true)
                     {
                         <li><a href="@Url.Action("Create", "Posts")">Create</a></li>
-                    }
+                    }       
                 }
             </ul>
         </nav>
@@ -50,7 +51,7 @@
             <div class="navBar">
                 <div class="container">
                     <section class="logo">
-                        <a href="~/Home/">HardSoft</a>
+                        <a href="">HardSoft</a>
                     </section>
                     <nav class="nav">
                         <ul>
@@ -63,6 +64,21 @@
                                 {
                                     <li><a href="@Url.Action("Create", "Posts")">Create</a></li>
                                 }
+                                <li class="dropdown">
+                                    <a href="#" class="user-avatar" data-toggle="dropdown">
+                                        <img class="img-responsive avatar" src="~/Content/Images/UserPhotos/@User.Identity.getAvatar()" alt="User Avatar" />
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="@Url.Action("Index", "Manage")">Manage</a></li>
+                                        <li>
+                                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                            }
+                                        </li>
+                                    </ul>
+                                </li>
                             }
                         </ul>
                     </nav>
@@ -80,9 +96,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="new">
-                                        @if (Model.Count > 0)
+                                        @if (Model.Posts.Count > 0)
                                         {
-                                            foreach (var item in Model)
+                                            foreach (var item in Model.Posts)
                                             {
                                                 <div class="panel">
                                                     <div class="panel-heading">
@@ -92,7 +108,7 @@
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="head">
-                                                            <a href="@Url.Action("Details", "Posts", new { id = item.Id })"><img src="@item.ImageURL" class="img-responsive" alt=""></a>
+                                                            <a href="@Url.Action("Details", "Posts", new { id = item.Id })"><img src="~/images/news/@item.ImageURL" class="img-responsive" alt=""></a>
                                                         </div>
                                                         <div class="content">
                                                             @Html.Raw(item.Content)
@@ -120,9 +136,14 @@
                                                             <div>
                                                                 <i class="fa fa-folder-open-o"></i>
                                                                 <span>IN:</span>
-                                                                <a href="">Wordpress</a>
-                                                                <span>, </span>
-                                                                <a href="">PHP</a>
+                                                                @for (int i = 0; i < item.Tags.Count;i++ )
+                                                                {
+                                                                    @Html.ActionLink(item.Tags[i].TagName, "Index", "Posts", new { searchString = item.Tags[i].TagName }, null)
+                                                                    if(i<item.Tags.Count-1)
+                                                                    {
+                                                                        <span>, </span>
+                                                                    }
+                                                                }
                                                             </div>
                                                             <div class="read">
                                                                 <a href="@Url.Action("Details", "Posts", new { id = item.Id })">Read More</a>
@@ -154,7 +175,7 @@
                                             </div>
                                         }
 
-                                        @Html.PagedListPager(Model, page => Url.Action("Index",
+                                        @Html.PagedListPager(Model.Posts, page => Url.Action("Index",
                                         new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
                                     </div>
                                 </div>
@@ -185,15 +206,10 @@
                                         <span>Tags</span>
                                     </div>
                                     <div class="panel-body">
-                                        <a href="">PHP</a>
-                                        <a href="">Wordpress</a>
-                                        <a href="">HTML</a>
-                                        <a href="">CSS</a>
-                                        <a href="">JavaScript</a>
-                                        <a href="">Web</a>
-                                        <a href="">Designer</a>
-                                        <a href="">Java</a>
-                                        <a href="">C#</a>
+                                        @foreach(var tag in Model.Tags)
+                                        {
+                                            @Html.ActionLink(tag.TagName, "Index", "Posts", new { searchString = tag.TagName }, null)
+                                        }
                                     </div>
                                 </div>
                             </div>
