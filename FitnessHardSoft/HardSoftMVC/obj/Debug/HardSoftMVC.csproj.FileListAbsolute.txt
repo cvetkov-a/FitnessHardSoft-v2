@@ -1,0 +1,257 @@
+c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\csc.exe
+c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\seooc\documents\visual studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\ApplicationInsights.config
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\csc.exe
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\vbc.exe
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\HardSoftMVC.dll.config
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\HardSoftMVC.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\HardSoftMVC.pdb
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Antlr3.Runtime.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\EntityFramework.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.Web.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Newtonsoft.Json.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Owin.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\PagedList.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\PagedList.Mvc.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.Helpers.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.Mvc.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.Optimization.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.Razor.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.WebPages.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\WebGrease.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.Web.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\PagedList.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\PagedList.Mvc.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.Helpers.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.Mvc.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.Optimization.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.Razor.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.WebPages.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Antlr3.Runtime.pdb
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Newtonsoft.Json.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\EntityFramework.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\obj\Debug\HardSoftMVC.csprojResolveAssemblyReference.cache
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\obj\Debug\HardSoftMVC.dll
+C:\Users\Alexander\Desktop\abc\HardSoftMVC\obj\Debug\HardSoftMVC.pdb
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\ApplicationInsights.config
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\csc.exe
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\vbc.exe
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\HardSoftMVC.dll.config
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\HardSoftMVC.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\HardSoftMVC.pdb
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Antlr3.Runtime.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\EntityFramework.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.Web.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Newtonsoft.Json.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Owin.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.Helpers.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.Mvc.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.Optimization.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.Razor.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.WebPages.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\WebGrease.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.Web.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\PagedList.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\PagedList.Mvc.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.Helpers.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.Mvc.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.Optimization.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.Razor.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.WebPages.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Antlr3.Runtime.pdb
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Newtonsoft.Json.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\EntityFramework.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\obj\Debug\HardSoftMVC.csprojResolveAssemblyReference.cache
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\obj\Debug\HardSoftMVC.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\obj\Debug\HardSoftMVC.pdb
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\PagedList.dll
+C:\Users\seooc\Desktop\RealProject\FitnessHardSoft-v2\FitnessHardSoft\HardSoftMVC\bin\PagedList.Mvc.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\ApplicationInsights.config
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\vbc.exe
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\HardSoftMVC.dll.config
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\HardSoftMVC.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\HardSoftMVC.pdb
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Antlr3.Runtime.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\EntityFramework.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.Web.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Newtonsoft.Json.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Owin.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\PagedList.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\PagedList.Mvc.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.Helpers.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.Mvc.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.Optimization.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.Razor.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.WebPages.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\WebGrease.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.Web.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\PagedList.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\PagedList.Mvc.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.Helpers.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.Mvc.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.Optimization.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.Razor.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.WebPages.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Antlr3.Runtime.pdb
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Newtonsoft.Json.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\EntityFramework.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\obj\Debug\HardSoftMVC.dll
+C:\Users\seooc\Documents\Visual Studio 2015\Projects\HardSoftMVC\HardSoftMVC\obj\Debug\HardSoftMVC.pdb

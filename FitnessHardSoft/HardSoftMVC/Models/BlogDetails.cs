@@ -8,6 +8,6 @@ namespace HardSoftMVC.Models
     public class BlogDetails
     {
         public HardSoftMVC.Models.Post Post {  get; set;  }
-        public List<string> Tags { get; set; }
+        public List<Tag> Tags { get; set; }
     }
 }

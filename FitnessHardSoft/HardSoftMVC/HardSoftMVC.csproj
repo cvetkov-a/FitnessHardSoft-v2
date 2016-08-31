@@ -203,6 +203,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\Methods.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -232,14 +233,37 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\blog.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Images\UserPhotos\3b7045f2-b15d-4b73-abd8-8003d405378713124600_774482359354388_629241152293796987_n.jpg" />
+    <Content Include="Content\Images\UserPhotos\85d761e5-24cc-4e38-9437-66875060c6b4trainer.jpg" />
+    <Content Include="Content\Images\UserPhotos\8a8c8c8a-6976-4e47-a3a4-bb919015fa15index.jpg" />
+    <Content Include="Content\Images\UserPhotos\a8f49631-97cd-47c0-8448-ae03ebcee158trainer.jpg" />
+    <Content Include="Content\Images\UserPhotos\b27ebfcf-b11f-4ca7-9e6b-98caa64dc82d13124600_774482359354388_629241152293796987_n.jpg" />
+    <Content Include="Content\Images\UserPhotos\noavatar.jpg" />
     <Content Include="Content\login.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\start.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\AjaxLoader.gif" />
+    <Content Include="images\grabbing.png" />
+    <Content Include="images\news\new.jpg" />
+    <Content Include="images\news\new2.jpg" />
+    <Content Include="images\news\new3.jpg" />
+    <Content Include="images\news\new4.jpg" />
+    <Content Include="images\news\new5.jpg" />
+    <Content Include="images\trainers\trainer.jpg" />
+    <Content Include="images\work.jpg" />
+    <Content Include="images\work2.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -247,6 +271,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
