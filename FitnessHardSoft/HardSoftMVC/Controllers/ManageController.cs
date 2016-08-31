@@ -8,12 +8,19 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HardSoftMVC.Models;
 using System.Collections.Generic;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data;
+using System.Data.Entity;
+using System.Net;
+using System.Web.Security;
+using PagedList;
 
 namespace HardSoftMVC.Controllers
 {
     [Authorize]
     public class ManageController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -85,9 +92,28 @@ namespace HardSoftMVC.Controllers
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
                 HasCard = cardNames
             };
+            if (isAdministrator())
+            {
+                ViewBag.isAdmin = true;
+            }
             return View(model);
         }
 
+        public Boolean isAdministrator()
+        {
+            var userStore = new UserStore<ApplicationUser>(db);
+            var userManager = new UserManager<ApplicationUser>(userStore);
+
+            if (!User.Identity.IsAuthenticated)
+                return false;
+
+            var user = User.Identity;
+
+            if (!userManager.IsInRole(user.GetUserId(), "Administrators"))
+                return false;
+
+            return true;
+        }
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]

@@ -8,6 +8,6 @@ namespace HardSoftMVC.Models
     public class BlogWholeInfo
     {
         public PagedList.IPagedList<HardSoftMVC.Models.Post> Posts {  get; set;  }
-        public List<Tag> Tags { get; set; }
+        public List<string> Tags { get; set; }
     }
 }

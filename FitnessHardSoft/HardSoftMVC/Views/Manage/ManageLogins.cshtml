@@ -4,197 +4,67 @@
     ViewBag.Title = "Manage your external logins";
 }
 
-@using HardSoftMVC.Models.Extensions
-<aside class="sideBar">
-    <header>
-        <span class="glyphicon glyphicon-remove navbartogg"></span>
-    </header>
-    <main>
-        <div class="time">
-            <div>Any Questions?</div>
-            <div>Call Us: <span><a href="tel:202-555-0130">202-555-0130</a></span></div>
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
+                for details on setting up this ASP.NET application to support logging in via external services.
+            </p>
         </div>
-    </main>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#trainers">Trainers</a></li>
-            <li><a href="">Pages</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-            @if (User.Identity.IsAuthenticated)
-            {
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown">
-                        <img class="img-responsive avatar" src="~/Content/Images/UserPhotos/@User.Identity.getAvatar()" alt="User Avatar" />
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="@Url.Action("Index", "Manage")">Manage</a></li>
-                        <li>
-                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                            {
-                                @Html.AntiForgeryToken()
-                                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                            }
-                        </li>
-                    </ul>
-                </li>
-            }
-        </ul>
-    </nav>
-</aside>
-<section class="s-l animated wow fadeIn" id="home">
-    <header>
-        <div class="barSocial">
-            <div class="container">
-                <nav class="social">
-                    <ul>
-                        <li><a class="facebook" href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="twitter" href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="linkedin" href=""><i class="fa fa-linkedin"></i></a></li>
-                        <li><a class="vimeo" href=""><i class="fa fa-vimeo"></i></a></li>
-                        <li><a class="pinterest" href=""><i class="fa fa-pinterest-p"></i></a></li>
-                        <li><a class="instagram" href=""><i class="fa fa-instagram"></i></a></li>
-                        <li><a class="googlep" href=""><i class="fa fa-google-plus"></i></a></li>
-                        <li><a class="youtube" href=""><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-                </nav>
-                <p class="time">Any Questions? Call Us: <span><a href="tel:202-555-0130">202-555-0130</a></span></p>
-                <div class="cls">
-                    <i class="fa fa-times"></i>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="slider home img-responsive">
-            <div class="content">
-                <h3 class="wow bounceIn" data-wow-delay="0.4s">HardSoft - It's right now or never</h3>
-                @if (!Request.IsAuthenticated)
-                {
-                    <p class="wow fadeIn" data-wow-delay="0.5s">You’re Tired, I’m Tired. You’re feeling down, me too. Does it make us weak? No, it makes us human. It’s never going to be the perfect time to start.<strong> Start now</strong>. Nobody will do it for you.</p>
-                    <a class="btn wow pulse" href="@Url.Action("Login", "Account")" data-wow-delay="0.7s">Start now</a>
-                }
-                else
-                {
-                    <p class="wow fadeIn" data-wow-delay="0.5s">Hey, no one ever said getting an awesome, healthy body was easy—that's why the word work is in working out.</p>
-                }
-            </div>
-            <div class="navBar">
-                <div class="container">
-                    <section class="logo">
-                        <a href="">HardSoft</a>
-                    </section>
-                    <nav class="nav">
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#trainers">Trainers</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                <li class="dropdown">
-                                    <a href="#" class="user-avatar" data-toggle="dropdown">
-                                        <img class="img-responsive avatar" src="~/Content/Images/UserPhotos/@User.Identity.getAvatar()" alt="User Avatar" />
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="@Url.Action("Index", "Manage")">Manage</a></li>
-                                        <li>
-                                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                                            {
-                                                @Html.AntiForgeryToken()
-                                                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                                            }
-                                        </li>
-                                    </ul>
-                                </li>
-                            }
-                        </ul>
-                    </nav>
-                    <button class="navbar-toggle">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-            </div>
-        </section>
-        <section class="manage section">
-            <div class="container">
-                <h2>@ViewBag.Title.</h2>
-                <p class="text-success">@ViewBag.StatusMessage</p>
-                @{
-                    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
-                    if (loginProviders.Count() == 0)
+    }
+    else
+    {
+        if (Model.CurrentLogins.Count > 0)
+        {
+            <h4>Registered Logins</h4>
+            <table class="table">
+                <tbody>
+                    @foreach (var account in Model.CurrentLogins)
                     {
-                        <div>
-                            <p>
-                                There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
-                                for details on setting up this ASP.NET application to support logging in via external services.
-                            </p>
-                        </div>
-                    }
-                    else
-                    {
-                        if (Model.CurrentLogins.Count > 0)
-                        {
-                            <h4>Registered Logins</h4>
-                            <table class="table">
-                                <tbody>
-                                    @foreach (var account in Model.CurrentLogins)
-                    {
-                                        <tr>
-                                            <td>@account.LoginProvider</td>
-                                            <td>
-                                                @if (ViewBag.ShowRemoveButton)
-                                                {
-                                                    using (Html.BeginForm("RemoveLogin", "Manage"))
-                                                    {
-                                                        @Html.AntiForgeryToken()
-                                                        <div>
-                                                            @Html.Hidden("loginProvider", account.LoginProvider)
-                                                            @Html.Hidden("providerKey", account.ProviderKey)
-                                                            <input type="submit" class="btn btn-default" value="Remove" title="Remove this @account.LoginProvider login from your account" />
-                                                        </div>
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    @: &nbsp;
-                                }
-                                            </td>
-                                        </tr>
+                        <tr>
+                            <td>@account.LoginProvider</td>
+                            <td>
+                                @if (ViewBag.ShowRemoveButton)
+                                {
+                                    using (Html.BeginForm("RemoveLogin", "Manage"))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div>
+                                            @Html.Hidden("loginProvider", account.LoginProvider)
+                                            @Html.Hidden("providerKey", account.ProviderKey)
+                                            <input type="submit" class="btn btn-default" value="Remove" title="Remove this @account.LoginProvider login from your account" />
+                                        </div>
                                     }
-                                </tbody>
-                            </table>
-                        }
-                        if (Model.OtherLogins.Count > 0)
-                        {
-                            using (Html.BeginForm("LinkLogin", "Manage"))
-                            {
-                                @Html.AntiForgeryToken()
-                                <div id="socialLoginList">
-                                    <p>
-                                        @foreach (AuthenticationDescription p in Model.OtherLogins)
-                                        {
-                                            <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
-                                        }
-                                    </p>
-                                </div>
-                            }
-                        }
+                                }
+                                else
+                                {
+                                    @: &nbsp;
+                                }
+                            </td>
+                        </tr>
                     }
-                }
-            </div>
-        </section>
-    </main>
-</section>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <span>&copy; copyright 2016 - Fitness Centre HardSoft</span>
-            </div>
-        </div>
-    </div>
-</footer>
+                </tbody>
+            </table>
+        }
+        if (Model.OtherLogins.Count > 0)
+        {
+            using (Html.BeginForm("LinkLogin", "Manage"))
+            {
+                @Html.AntiForgeryToken()
+                <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in Model.OtherLogins)
+                    {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                    }
+                </p>
+                </div>
+            }
+        }
+    }
+}

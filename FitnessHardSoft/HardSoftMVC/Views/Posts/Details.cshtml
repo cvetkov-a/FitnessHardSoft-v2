@@ -102,10 +102,10 @@
                                                         <div>
                                                             <i class="fa fa-folder-open-o"></i>
                                                             <span>IN:</span>
-                                                            @for (int i = 0; i < Model.Tags.Count; i++)
+                                                            @for (int i = 0; i < Model.Post.Tags.Count; i++)
 {
-    @Html.ActionLink(Model.Tags[i].TagName, "Index", "Posts", new { searchString = Model.Tags[i].TagName }, null)
-    if (i < Model.Tags.Count - 1)
+    @Html.ActionLink(Model.Post.Tags[i].TagName.ToString(), "Index", "Posts", new { searchString = Model.Post.Tags[i].TagName.ToString() }, null)
+    if (i < Model.Post.Tags.Count - 1)
     {
         <span>, </span>
     }
@@ -144,7 +144,7 @@
                                     <div class="panel-body">
                                         @foreach (var tag in Model.Tags)
 {
-    @Html.ActionLink(tag.TagName, "Index", "Posts", new { searchString = tag.TagName }, null)
+    @Html.ActionLink(tag, "Index", "Posts", new { searchString = tag }, null)
 }
                                     </div>
                                 </div>

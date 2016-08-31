@@ -11,7 +11,6 @@ using HardSoftMVC.Models;
 using PagedList;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
-using HardSoftMVC.Classes;
 
 namespace HardSoftMVC.Controllers
 {
@@ -42,12 +41,21 @@ namespace HardSoftMVC.Controllers
                                        || s.Content.Contains(searchString));
             }
 
-            Method method = new Method();
-
             foreach (var post in posts)
             {
-                post.Title = method.TruncateAtWord(post.Title, 40);
-                post.Content = method.TruncateAtWord(post.Content, 300);
+                if (post.Title.Length >= 40)
+                {
+                    post.Title = post.Title.Substring(0, 40);
+
+                    post.Title += "...";
+                }
+
+                if (post.Content.Length >= 300)
+                {
+                    post.Content = post.Content.Substring(0, 300);
+
+                    post.Content += "...";
+                }
             }
 
             posts = posts.OrderByDescending(p => p.Date);
@@ -61,7 +69,17 @@ namespace HardSoftMVC.Controllers
             if (isTrainer())
                 ViewBag.isTrainer = true;
             BlogWholeInfo.Posts = posts.ToPagedList(pageNumber, pageSize);
-            BlogWholeInfo.Tags = db.Tags.Select(a => a).Take(20).ToList();
+            var partialTags = db.Tags.Select(a => a.TagName).ToList();
+            List<string> finalResult = new List<string>();
+            foreach(var tag in partialTags)
+            {
+
+                if(finalResult.Contains(tag)==false)
+                {
+                    finalResult.Add(tag);
+                }
+            }
+            BlogWholeInfo.Tags = finalResult;
             return View(BlogWholeInfo);
         }
 
@@ -107,7 +125,7 @@ namespace HardSoftMVC.Controllers
             Post post = db.Posts.Find(id);
             BlogDetails details = new BlogDetails();
             details.Post = post;
-            details.Tags = db.Tags.Take(20).ToList();
+            details.Tags = db.Tags.Select(a=>a.TagName).Take(20).ToList();
             if (post == null)
             {
                 return HttpNotFound();
