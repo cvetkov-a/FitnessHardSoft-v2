@@ -22,7 +22,7 @@ namespace HardSoftMVC.Migrations
                 // If the database is empty, populate sample data in it
 
                 CreateUser(context, "ib0x@abv.bg", "123456789", "System Administrator", "noavatar.jpg");
-                CreateUser(context, "pesho@gmail.com", "12345", "Pesho", "noavatar.jpg");
+                CreateUser(context, "pesho@gmail.com", "12345", "System Administrator", "noavatar.jpg");
                 CreateUser(context, "merry@gmail.com", "12345", "Merry", "noavatar.jpg");
                 CreateUser(context, "geshu@gmail.com", "12345", "Geshu", "noavatar.jpg");
 
