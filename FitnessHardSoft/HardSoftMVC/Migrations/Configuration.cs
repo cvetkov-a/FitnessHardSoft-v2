@@ -26,7 +26,7 @@ namespace HardSoftMVC.Migrations
                 CreateUser(context, "pesho@gmail.com", "12345", "System Administrator", "noavatar.jpg");
                 CreateUser(context, "merry@gmail.com", "12345", "Merry", "noavatar.jpg");
                 CreateUser(context, "geshu@gmail.com", "12345", "Geshu", "noavatar.jpg");
-                CreateUser(context, "georgi.yazovaliiski@gmail.com", "gogo2000", "Gosho", "noavatar.jpg");
+                CreateUser(context, "georgi.yazovaliiski@gmail.com", "gogo2000", "Gosho", "myavatar.jpg");
                 CreateUser(context, "sashobgb@abv.bg", "12345", "Sasho", "noavatar.jpg");
 
                 CreateRole(context, "Administrators");
