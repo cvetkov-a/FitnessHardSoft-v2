@@ -158,7 +158,7 @@ namespace HardSoftMVC.Controllers
         {
             string Tagove = post.TagsString;
             var TagsList = Tagove.Split(' ').ToList();
-
+            post.Author_Id = User.Identity.GetUserId();
             List<Tag> TagsResult = new List<Tag>();
             foreach (var tag in TagsList)
             {
