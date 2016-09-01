@@ -122,14 +122,14 @@ namespace HardSoftMVC.Migrations
                 CreateCard(context,
                     CreationDate: new DateTime(2016, 06, 30, 17, 36, 52),
                     ExpirationDate: new DateTime(2017, 06, 30, 17, 36, 52),
-                    CardId: 2,
-                    Purchaser: "37aa07aa-833a-4f05-8a8d-cad92ed0c654"
+                    CardName: 1,
+                    Purchaser: "georgi.yazovaliiski@gmail.com"
                     );
                 CreateCard(context,
                     CreationDate: new DateTime(2016, 06, 30, 17, 36, 52),
                     ExpirationDate: new DateTime(2017, 06, 30, 17, 36, 52),
-                    CardId: 1,
-                    Purchaser: "37aa07aa-833a-4f05-8a8d-cad92ed0c654"
+                    CardName: 2,
+                    Purchaser: "georgi.yazovaliiski@gmail.com"
                     );
                 
                 context.SaveChanges();
@@ -240,15 +240,14 @@ namespace HardSoftMVC.Migrations
             cardType.Type = type;
             context.Types.Add(cardType);
         }
-
         private void CreateCard(ApplicationDbContext context,
-            DateTime CreationDate, DateTime ExpirationDate, int CardId, string Purchaser)
+            DateTime CreationDate, DateTime ExpirationDate, int CardName, string Purchaser)
         {
             var currentCard = new Card();
             currentCard.DateOfCreating = CreationDate;
             currentCard.ExpirationDate = ExpirationDate;
-            currentCard.CardId = context.Types.Where(a => a.Id == CardId).FirstOrDefault();
-            currentCard.Purchaser = context.Users.Where(a=>a.Id==Purchaser).FirstOrDefault();
+            currentCard.CardId = context.Types.Where(a => a.Id == CardName).FirstOrDefault();
+            currentCard.Purchaser = context.Users.Where(a => a.Email == Purchaser).FirstOrDefault();
             context.Cards.Add(currentCard);
         }
     }

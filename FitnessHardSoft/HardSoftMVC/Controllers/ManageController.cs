@@ -72,7 +72,7 @@ namespace HardSoftMVC.Controllers
             {
                     ManageCardProps cardName = new ManageCardProps();
                     var part = db.Cards.Where(a => a.Id == c.Id).Select(a => a.CardId.Type).ToList();
-                    cardName.CardName = part[0].ToString();
+                    cardName.CardName = part[0];
                     cardName.ExpirationDate = c.ExpirationDate;
                     cardNames.Add(cardName);
             }
